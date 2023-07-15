@@ -1,0 +1,215 @@
+@use '../../styles/colors' as colors;
+
+.container {
+  width: 100%;
+  color: white;
+  padding: 2rem 1.2rem;
+  background-color: colors.$main-component-bg;
+  border-radius: 5px;
+  border: 1px solid colors.$main-blue-border;
+
+  h5 {
+    font-weight: 300;
+  }
+
+  .input-area {
+    margin-top: 1.8rem;
+    position: relative;
+
+    .label {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .date-dropdowns {
+      margin-top: 0.5rem;
+
+      & > * {
+        & > * {
+          margin: 0;
+          width: 100%;
+
+          @media only screen and (max-width: 650px) {
+            margin-top: 1rem;
+          }
+
+          &:nth-child(1) {
+            @media only screen and (max-width: 650px) {
+              margin-top: 0;
+            }
+          }
+
+          &:nth-child(2) {
+            margin: 0 1rem;
+
+            @media only screen and (max-width: 650px) {
+              margin-top: 1rem;
+            }
+          }
+        }
+      }
+    }
+
+    .img-input-container {
+      border-radius: 5px;
+      margin-top: 0.5rem;
+      border: 3px dashed rgba($color: #ffffff, $alpha: 0.2);
+      position: relative;
+      height: 300px;
+      overflow: hidden;
+
+      .title {
+        color: rgba($color: #ffffff, $alpha: 0.6);
+        text-align: center;
+      }
+
+      input {
+        opacity: 0;
+        cursor: pointer;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+      }
+
+      .img {
+        display: none;
+        height: 90%;
+        object-fit: cover;
+        position: absolute;
+        border: none;
+
+        @media only screen and (max-width: 650px) {
+          height: 80%;
+        }
+      }
+
+      .img-active {
+        display: block;
+      }
+    }
+
+    .input {
+      border: none;
+      outline: none;
+      background: transparent;
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+      color: white;
+      padding: 0.5rem;
+      width: 100%;
+      display: block;
+      border-bottom: 1px solid rgba($color: #ffffff, $alpha: 0.2);
+    }
+
+    ::placeholder {
+      /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: rgba($color: #ffffff, $alpha: 0.15);
+      opacity: 1; /* Firefox */
+    }
+
+    :-ms-input-placeholder {
+      /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: rgba($color: #ffffff, $alpha: 0.15);
+      opacity: 1; /* Firefox */
+    }
+
+    ::-ms-input-placeholder {
+      /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: rgba($color: #ffffff, $alpha: 0.15);
+      opacity: 1; /* Firefox */
+    }
+
+    .textarea {
+      border: none;
+      outline: none;
+      background: transparent;
+      font-size: 1rem;
+      letter-spacing: 0.2px;
+      color: white;
+      padding: 0.5rem;
+      width: 100%;
+      display: block;
+      border-radius: 4px;
+      border: 1px solid rgba($color: #ffffff, $alpha: 0.2);
+      min-height: 380px;
+      resize: none;
+    }
+
+    .dropdown-area {
+      margin: 0.5rem 0;
+      width: 250px;
+
+      @media only screen and (max-width: 950px) {
+        width: 100%;
+      }
+    }
+
+    .date-dropdowns {
+      @media only screen and (max-width: 950px) {
+        flex-direction: column;
+      }
+
+      .dropdown-area {
+        width: 180px;
+        margin-right: 1rem;
+
+        @media only screen and (max-width: 950px) {
+          width: 100%;
+          margin-right: 0rem;
+        }
+      }
+    }
+
+    .checkbox-area {
+      margin-left: 1rem;
+    }
+
+    .disabled {
+      color: rgba($color: #ffffff, $alpha: 0.4);
+    }
+  }
+
+  .submit-area {
+    margin-top: 2rem;
+    flex-direction: column;
+    align-items: flex-end;
+
+    .terms-and-conditions-area {
+      @media only screen and (max-width: 950px) {
+        width: 100%;
+      }
+
+      @media only screen and (max-width: 650px) {
+        justify-content: flex-start;
+      }
+
+      .terms-and-conditions {
+        margin-left: 1rem;
+
+        a {
+          color: colors.$main-blue;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .captcha-area {
+      margin-top: 1rem;
+
+      @media only screen and (max-width: 650px) {
+        width: 100%;
+      }
+    }
+
+    .buttons {
+      margin-top: 1rem;
+
+      @media only screen and (max-width: 650px) {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+}

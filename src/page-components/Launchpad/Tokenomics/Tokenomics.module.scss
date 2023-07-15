@@ -1,0 +1,87 @@
+@use '../../../styles/colors' as colors;
+
+.container {
+  background-color: colors.$main-component-bg;
+  margin-top: 1.5rem;
+  border-radius: 5px;
+  border: 1px solid rgba($color: #ffffff, $alpha: 0.1);
+  padding: 1.5rem;
+
+  @media only screen and (max-width: 650px) {
+    padding: 1rem;
+  }
+
+  .title {
+    font-weight: 600;
+  }
+
+  .tokenomics {
+    margin-top: 2rem;
+
+    @media only screen and (max-width: 650px) {
+      flex-direction: column;
+    }
+
+    .left {
+      position: relative;
+
+      & > div {
+        transform: translate(-50%, -50%);
+      }
+
+      .graph {
+        display: block;
+
+        @media only screen and (max-width: 650px) {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+
+    .right {
+      width: 100%;
+      margin-left: 1.5rem;
+      flex-wrap: wrap;
+
+      @media only screen and (max-width: 650px) {
+        margin-left: 0;
+      }
+
+      .coverage {
+        width: 50%;
+        padding: 1rem;
+
+        @media only screen and (max-width: 950px) {
+          width: 100%;
+        }
+
+        @media only screen and (max-width: 650px) {
+          padding: 0;
+
+          margin-top: 1.8rem;
+        }
+
+        .coverage-title {
+          font-size: 16px;
+          font-weight: 400;
+        }
+
+        .coverage-bar {
+          position: relative;
+          margin-top: 0.5rem;
+          height: 12px;
+          border-radius: 8px;
+          overflow: hidden;
+          background-color: colors.$header;
+
+          .coverage-progress {
+            left: 0;
+            height: 100%;
+            width: 0%;
+          }
+        }
+      }
+    }
+  }
+}

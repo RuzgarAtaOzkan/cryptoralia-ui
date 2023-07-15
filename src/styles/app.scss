@@ -1,0 +1,61 @@
+@use './colors' as colors;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: colors.$body;
+
+    .grecaptcha-badge {
+      z-index: -10;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    main {
+      @media only screen and (max-width: 1550px) {
+        padding: 1rem;
+        padding-top: 0;
+      }
+    }
+
+    textarea {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    input {
+      -webkit-user-select: text; /* Chrome, Opera, Safari */
+      -moz-user-select: text; /* Firefox 2+ */
+      -ms-user-select: text; /* IE 10+ */
+      user-select: text; /* Standard syntax */
+      font-family: 'Poppins', sans-serif;
+    }
+
+    input::-webkit-input-placeholder {
+      color: rgba(255, 255, 255, 0.4);
+      font-family: 'Poppins', sans-serif;
+    }
+    input:-moz-placeholder {
+      color: rgba(255, 255, 255, 0.4);
+      font-family: 'Poppins', sans-serif;
+    }
+    input::-moz-placeholder {
+      color: rgba(255, 255, 255, 0.4);
+      font-family: 'Poppins', sans-serif;
+    }
+    input:-ms-input-placeholder {
+      color: rgba(255, 255, 255, 0.4);
+      font-family: 'Poppins', sans-serif;
+    }
+  }
+}

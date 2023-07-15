@@ -1,0 +1,115 @@
+@use '../../styles/colors' as colors;
+
+.container {
+  border-radius: 5px;
+  padding: 1rem;
+  background-color: #273144;
+  //box-shadow: rgba(255, 255, 255, 0.18) 0px 0px 18px;
+  width: 400px;
+
+  .top {
+    .left {
+      img {
+        height: 80px;
+        width: 80px;
+        object-fit: cover;
+      }
+
+      .title-area {
+        margin-left: 0.8rem;
+
+        h3 {
+          cursor: pointer;
+          color: white;
+          font-size: 2rem;
+          letter-spacing: 0.3px;
+
+          @media only screen and (max-width: 950px) {
+            font-size: 1.5rem;
+          }
+        }
+
+        .symbol {
+          color: colors.$main-blue;
+        }
+      }
+    }
+
+    .right {
+      .title {
+        font-size: 12px;
+        color: rgba($color: #616161, $alpha: 1);
+      }
+
+      .value {
+        color: white;
+        font-weight: bold;
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .mid {
+    margin-top: 1rem;
+    color: white;
+    font-size: 13px;
+
+    .launchpad {
+      .title {
+        width: 120px;
+      }
+
+      .value {
+        font-weight: bold;
+      }
+    }
+
+    .launch-date {
+      margin-top: 0.2rem;
+      .title {
+        width: 120px;
+      }
+
+      .value {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .bottom {
+    margin-top: 1.2rem;
+    color: white;
+
+    .left {
+      .socials {
+        svg {
+          cursor: pointer;
+          margin-right: 0.8rem;
+          font-size: 1.5rem;
+          transition: all 0.2s ease-out;
+        }
+
+        svg:hover {
+          color: colors.$main-blue;
+        }
+      }
+    }
+
+    .right {
+      .view {
+        cursor: pointer;
+        padding: 0.2rem 0.9rem;
+        border-radius: 25px;
+        font-weight: bold;
+        color: white;
+        background: linear-gradient(
+          -45deg,
+          rgba($color: colors.$main-blue, $alpha: 1),
+          rgba($color: rgb(0, 122, 170), $alpha: 1)
+        );
+        box-shadow: rgba($color: colors.$main-blue, $alpha: 0.2) 0px 7px 29px
+          0px;
+      }
+    }
+  }
+}

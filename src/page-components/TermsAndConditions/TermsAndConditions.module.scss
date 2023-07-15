@@ -1,0 +1,30 @@
+.terms-and-conditions-section {
+  .terms-and-conditions {
+    width: 1500px;
+    margin-top: 1rem;
+    color: white;
+
+    @media only screen and (max-width: 1550px) {
+      width: 100%;
+    }
+
+    .subtitle {
+      margin-top: 1.2rem;
+      font-weight: bold;
+    }
+
+    .text {
+      margin-top: 0.2rem;
+      color: rgba($color: #d3d3d3, $alpha: 1);
+      font-size: 14px;
+      line-height: 24px;
+      letter-spacing: 0.2px;
+    }
+
+    ul {
+      li {
+        list-style: inside;
+      }
+    }
+  }
+}

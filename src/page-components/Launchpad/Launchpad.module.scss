@@ -1,0 +1,102 @@
+@use '../../styles/colors' as colors;
+
+.launchpad-section {
+  margin-top: 2rem;
+  color: white;
+
+  .launchpad {
+    width: 1500px;
+    font-weight: 200;
+    font-size: 22px;
+
+    @media only screen and (max-width: 1550px) {
+      width: 100%;
+    }
+
+    & > h1 {
+      font-size: 30px;
+
+      @media only screen and (max-width: 650px) {
+        font-size: 26px;
+      }
+    }
+
+    .info-boxes {
+      margin-top: 1.5rem;
+
+      @media only screen and (max-width: 950px) {
+        flex-direction: column;
+      }
+
+      @media only screen and (max-width: 650px) {
+        margin-top: 1rem;
+      }
+
+      #info-box-seperator {
+        margin: 0.75rem;
+
+        @media only screen and (max-width: 650px) {
+          margin: 0.5rem;
+        }
+      }
+    }
+
+    .summary {
+      border-radius: 5px;
+      border: 1px solid rgba($color: #ffffff, $alpha: 0.1);
+      margin-top: 1.5rem;
+      padding: 1.5rem;
+      background-color: colors.$main-component-bg;
+
+      @media only screen and (max-width: 950px) {
+        flex-direction: column;
+      }
+
+      @media only screen and (max-width: 650px) {
+        padding: 1rem;
+        margin-top: 1rem;
+      }
+
+      .summary-left {
+        width: 100%;
+
+        .summary-title {
+          font-weight: 600;
+        }
+
+        & > p {
+          font-size: 16px;
+          font-weight: 400;
+          color: rgba($color: #ffffff, $alpha: 0.7);
+          line-height: 28px;
+          letter-spacing: 0.5px;
+          margin-top: 1rem;
+        }
+      }
+
+      .summary-right {
+        margin-left: 2rem;
+
+        @media only screen and (max-width: 950px) {
+          margin-left: 0;
+          margin-top: 2rem;
+          width: 100%;
+        }
+
+        iframe {
+          width: 560px;
+          height: 315px;
+          border-radius: 3px;
+
+          @media only screen and (max-width: 950px) {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.traffic-section {
+  margin-top: 4rem;
+}

@@ -1,0 +1,124 @@
+.fx-ctr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fx-str {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.fx-btw {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fx-clmn-ctr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.fx-clmn-str {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.trnstn {
+  transition: all 0.3s ease;
+}
+
+.flx-str-ctr {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.flx-ctr-ctr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flx-ctr-str {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.flx-btw-ctr {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flx-btw-str {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.flx-evn-ctr {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.flx-str-str {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.flx-end-ctr {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.flx-btw-end {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.flx-ctr-end {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.flx-str-str-clm {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.flx-btw-str-clm {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.flx-ctr-ctr-clm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.pos-rel {
+  position: relative;
+}
+
+.pos-abs {
+  position: absolute;
+}

@@ -1,0 +1,115 @@
+@use '../../styles/colors' as colors;
+
+.container {
+  @media only screen and (max-width: 950px) {
+    overflow-y: scroll;
+  }
+
+  .table {
+    @media only screen and (max-width: 950px) {
+      width: 700px;
+    }
+
+    .titles {
+      font-weight: bold;
+      padding: 0.4rem 1.5rem;
+      background-color: colors.$table-title;
+      font-size: 14px;
+
+      .name {
+        width: 400px;
+      }
+
+      .actions {
+        width: 150px;
+      }
+
+      .status {
+        width: 200px;
+      }
+    }
+
+    .rows {
+      background-color: colors.$table-row;
+
+      .row {
+        padding: 1rem 1.5rem;
+        border-top: 1px solid rgba($color: #ffffff, $alpha: 0.1);
+
+        .name-edit {
+          width: 400px;
+
+          .name {
+            display: block;
+            color: white;
+            text-decoration: underline;
+          }
+
+          .edit-icon {
+            margin-left: 0.8rem;
+
+            svg {
+              color: white;
+              cursor: pointer;
+              font-size: 25px;
+              border-radius: 2px;
+              padding: 0.4rem;
+              background-color: rgba($color: #ffffff, $alpha: 0.1);
+              transition: all 0.2s ease-out;
+            }
+
+            svg:hover {
+              background-color: rgba($color: #ffffff, $alpha: 0.25);
+            }
+          }
+        }
+
+        .actions {
+          width: 150px;
+
+          .promote-btn {
+            transition: all 0.2s ease-out;
+            padding: 0.5rem 0.7rem;
+            border-radius: 2px;
+            background-color: rgba($color: #ffffff, $alpha: 0.1);
+
+            .promote-icon-area {
+              svg {
+                width: 20px;
+                height: 20px;
+                color: white;
+              }
+            }
+
+            .promote-title {
+              margin-left: 0.5rem;
+              color: white;
+            }
+          }
+
+          .promote-btn:hover {
+            background-color: rgba($color: #ffffff, $alpha: 0.25);
+          }
+        }
+
+        .status {
+          color: colors.$green;
+          width: 200px;
+          text-align: center;
+        }
+
+        .red {
+          color: colors.$red;
+        }
+
+        .green {
+          color: colors.$green;
+        }
+
+        .grey {
+          color: rgba($color: #ffffff, $alpha: 0.3);
+        }
+      }
+    }
+  }
+}

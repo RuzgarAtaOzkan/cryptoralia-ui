@@ -1,0 +1,140 @@
+@use '../../styles/colors' as colors;
+
+.guide-section {
+  margin-top: 2rem;
+  color: white;
+  min-height: 800px;
+
+  .container {
+    border: 1px solid rgba($color: #ffffff, $alpha: 0.1);
+    border-radius: 5px;
+    width: 1500px;
+    background-color: colors.$main-component-bg;
+
+    @media only screen and (max-width: 1550px) {
+      width: 100%;
+    }
+
+    .guide-title {
+      padding: 1.5rem;
+      border-bottom: 1px solid rgba($color: #ffffff, $alpha: 0.1);
+
+      @media only screen and (max-width: 650px) {
+        padding: 1rem;
+      }
+
+      & > h1 {
+        font-size: 22px;
+      }
+
+      .search-area {
+        border: 1px solid rgba($color: #ffffff, $alpha: 0.1);
+        border-radius: 4px;
+
+        & > input {
+          border: none;
+          outline: none;
+          color: white;
+          background-color: transparent;
+          padding: 0.6rem 0.8rem;
+          font-size: 14px;
+
+          @media only screen and (max-width: 650px) {
+            width: 150px;
+          }
+        }
+
+        .search-icon {
+          width: 30px;
+          margin: 0rem 0.5rem;
+
+          & > svg {
+            font-size: 20px;
+          }
+        }
+
+        .search-icon-spin {
+          animation: spin 1s infinite;
+        }
+      }
+    }
+
+    .guide-category {
+      padding: 1.5rem;
+      border-bottom: 1px solid rgba($color: #ffffff, $alpha: 0.1);
+
+      @media only screen and (max-width: 650px) {
+        padding: 1rem;
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      .category-title {
+        font-weight: 500;
+        font-size: 17px;
+      }
+
+      .category-content {
+        margin-top: 0.8rem;
+        overflow: hidden;
+        transition: all 0.2s ease-out;
+
+        @media only screen and (max-width: 950px) {
+          flex-direction: column;
+          margin-top: 1rem;
+        }
+
+        .column {
+          width: 20%;
+
+          @media only screen and (max-width: 950px) {
+            width: 100%;
+          }
+
+          & > a {
+            margin-bottom: 0.4rem;
+
+            display: block;
+            color: rgba($color: #0039d6, $alpha: 0.6);
+            color: rgba($color: #ffffff, $alpha: 0.8);
+            font-size: 14px;
+            font-weight: 300;
+
+            @media only screen and (max-width: 950px) {
+              margin-bottom: 0.5rem;
+            }
+          }
+
+          & > a:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      .load-more-area {
+        margin-top: 2rem;
+
+        .load-more-btn {
+          font-size: 14px;
+          cursor: pointer;
+
+          & > svg {
+            margin-left: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateZ(360deg);
+  }
+}

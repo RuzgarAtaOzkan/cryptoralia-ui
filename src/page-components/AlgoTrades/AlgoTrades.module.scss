@@ -1,0 +1,15 @@
+.algo-trades-section {
+  margin-top: 2rem;
+
+  .algo-trades {
+    width: 1500px;
+
+    @media only screen and (max-width: 1550px) {
+      width: 100%;
+    }
+
+    & > div {
+      margin-bottom: 5rem;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+
+.react-calendar {
+  border-radius: 3px;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  color: #454b53;
+}
+
+.react-calendar__navigation button {
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  color: #454b53;
+}
+
+.react-calendar__month-view {
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  color: #454b53;
+}
+
+.react-calendar__month-view__days button {
+  font-family: 'Poppins', sans-serif;
+  color: #454b53;
+}
+
+

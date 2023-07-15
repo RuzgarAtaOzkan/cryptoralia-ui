@@ -1,0 +1,51 @@
+@use '../../../styles/colors' as colors;
+
+.container {
+  width: 100%;
+  background-color: colors.$main-component-bg;
+  padding: 1.5rem;
+  border: 1px solid rgba($color: #ffffff, $alpha: 0.1);
+  border-radius: 5px;
+
+  @media only screen and (max-width: 650px) {
+    padding: 1rem;
+  }
+
+  .title {
+    font-weight: 600;
+  }
+
+  .items {
+    font-size: 18px;
+    margin-top: 1.5rem;
+
+    @media only screen and (max-width: 650px) {
+      font-size: 16px;
+    }
+
+    .item {
+      font-weight: 400;
+      margin-top: 1rem;
+
+      .key {
+        color: rgba($color: #ffffff, $alpha: 0.7);
+        min-width: 120px;
+      }
+
+      .value {
+        overflow-wrap: anywhere;
+        margin-left: 1rem;
+
+        svg {
+          margin-right: 0.5rem;
+          cursor: pointer;
+          transition: all 0.2s ease-out;
+        }
+
+        svg:hover {
+          color: colors.$main-blue;
+        }
+      }
+    }
+  }
+}

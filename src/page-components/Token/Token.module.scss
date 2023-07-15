@@ -1,0 +1,939 @@
+@use '../../styles/colors' as colors;
+
+.token-section {
+  margin-top: 2rem;
+
+  .container {
+    width: 1500px;
+
+    @media only screen and (max-width: 950px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .loading {
+      min-height: 800px;
+
+      & > svg {
+        font-size: 4rem;
+        animation: spin 2s infinite;
+        color: white;
+      }
+    }
+
+    .left {
+      width: 70%;
+
+      @media only screen and (max-width: 950px) {
+        width: 100%;
+        height: auto;
+      }
+
+      & > * {
+        width: 100%;
+      }
+
+      .logo-names-address-socials {
+        border: 1px solid rgba($color: #ffffff, $alpha: 0.1);
+        border-radius: 8px;
+        padding: 1rem;
+        background-color: colors.$main-component-bg;
+
+        @media only screen and (max-width: 650px) {
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: center;
+        }
+
+        .logo-container {
+          & > img {
+            border: 1px solid rgba($color: #ffffff, $alpha: 0.05);
+            display: block;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 4px;
+
+            @media only screen and (max-width: 650px) {
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+
+        .names-address {
+          margin-left: 1.5rem;
+          width: 100%;
+
+          @media only screen and (max-width: 650px) {
+            margin-left: 0;
+            margin-top: 2rem;
+          }
+
+          .popularity-watchlist {
+            @media only screen and (max-width: 650px) {
+              flex-direction: column;
+              align-items: flex-start;
+            }
+
+            .popularity {
+              color: colors.$main-blue;
+
+              .star-icon {
+                font-size: 22px;
+              }
+
+              .text {
+                margin-left: 0.3rem;
+
+                & > span {
+                  margin: 0.3rem;
+                  display: block;
+                  font-size: 11px;
+                  color: colors.$green;
+                }
+              }
+            }
+
+            .watchlist {
+              color: colors.$main-blue;
+
+              @media only screen and (max-width: 650px) {
+                margin-top: 0.6rem;
+              }
+
+              .star-icon {
+                font-size: 22px;
+              }
+
+              .text {
+                margin-left: 0.3rem;
+                color: colors.$green;
+              }
+            }
+          }
+
+          .name-symbol-network {
+            .verified {
+              position: relative;
+
+              & > img {
+                width: 20px;
+                cursor: pointer;
+                margin-left: 0.4rem;
+                display: block;
+              }
+
+              .verified-info {
+                color: white;
+                position: absolute;
+                min-width: 100px;
+                top: 50%;
+                left: 100%;
+                border-radius: 3px;
+                padding: 0.5rem;
+                font-size: 12px;
+                background-color: colors.$body;
+                box-shadow: 0px 0px 30px 1px rgba(255, 255, 255, 0.2);
+                opacity: 1;
+                transition: all 0.2s ease-out;
+              }
+
+              .verified-info:hover {
+                opacity: 1;
+              }
+            }
+
+            & > h1 {
+              color: white;
+
+              @media only screen and (max-width: 650px) {
+                font-size: 20px;
+              }
+            }
+
+            .symbol {
+              border-radius: 3px;
+              padding: 0.2rem 0.4rem;
+              font-size: 15px;
+              margin-left: 0.8rem;
+              background-color: rgba($color: #ffffff, $alpha: 0.2);
+              color: rgba(255, 255, 255, 0.9);
+
+              @media only screen and (max-width: 650px) {
+                margin-left: 1rem;
+                font-size: 13px;
+              }
+            }
+
+            .network {
+              border-radius: 3px;
+              padding: 0.2rem 0.4rem;
+              font-size: 15px;
+              margin-left: 0.8rem;
+              background-color: rgba($color: #ffffff, $alpha: 0.2);
+              color: rgba(255, 255, 255, 0.9);
+
+              @media only screen and (max-width: 650px) {
+                margin-left: 0.4rem;
+                font-size: 13px;
+              }
+
+              & > img {
+                display: block;
+                width: 18px;
+                height: 18px;
+                border-radius: 4px;
+                object-fit: cover;
+              }
+
+              .channel-name {
+                margin-left: 0.3rem;
+              }
+            }
+          }
+
+          .contract-address {
+            margin-top: 1rem;
+
+            @media only screen and (max-width: 650px) {
+              margin-top: 0.5rem;
+            }
+
+            .address-title {
+              font-size: 14px;
+              color: rgba($color: #ffffff, $alpha: 0.6);
+              font-weight: 300;
+              display: block;
+            }
+
+            .address {
+              margin-left: 0.5rem;
+              color: white;
+              display: block;
+              overflow: hidden;
+
+              @media only screen and (max-width: 1250px) {
+                width: 120px;
+              }
+            }
+
+            .copy-icon {
+              color: colors.$main-blue;
+              margin-left: 0.6rem;
+              font-size: 1.2rem;
+              cursor: pointer;
+            }
+          }
+
+          .socials {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-wrap: wrap;
+
+            @media only screen and (max-width: 950px) {
+              justify-content: flex-start;
+              margin-top: 0;
+            }
+
+            & > a {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              background-color: rgba($color: #ffffff, $alpha: 0.15);
+              border-radius: 5px;
+              margin-right: 1rem;
+              color: white;
+              padding: 0.5rem;
+              font-size: 22px;
+              width: 38px;
+              height: 38px;
+
+              @media only screen and (max-width: 950px) {
+                margin-right: 0.7rem;
+                margin-top: 0.7rem;
+              }
+
+              & > img {
+                display: block;
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+
+      .chart {
+        margin-top: 1rem;
+
+        & > iframe {
+          display: block;
+          border-radius: 8px;
+          border: 1px solid rgba($color: #ffffff, $alpha: 0.1);
+
+          @media only screen and (max-width: 950px) {
+            min-height: none;
+          }
+
+          @media only screen and (max-width: 950px) {
+            height: 400px;
+          }
+        }
+
+        @media only screen and (max-width: 950px) {
+          width: 100%;
+        }
+
+        .dexscreener-embed {
+          background-color: colors.$main-component-bg;
+          position: relative;
+          width: 100%;
+          height: 800px;
+          border: 1px solid rgba($color: #ffffff, $alpha: 0.1);
+          border-radius: 8px;
+          overflow: hidden;
+          //padding-bottom: 125%;
+
+          @media (min-width: 1400px) {
+            padding-bottom: 65%;
+          }
+
+          @media only screen and (max-width: 950px) {
+            height: 600px;
+          }
+        }
+
+        .dexscreener-embed > iframe {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          border: 0;
+          border-radius: 8px;
+        }
+      }
+
+      .trades {
+        margin-top: 1rem;
+
+        @media only screen and (max-width: 950px) {
+          width: 100%;
+          margin-left: 0;
+          margin-top: 1rem;
+        }
+
+        & > iframe {
+          display: block;
+          border-radius: 8px;
+          border: 1px solid rgba($color: #ffffff, $alpha: 0.1);
+
+          @media only screen and (max-width: 950px) {
+            min-height: none;
+          }
+
+          @media only screen and (max-width: 950px) {
+            height: 400px;
+          }
+        }
+
+        & > iframe {
+          @media only screen and (max-width: 1500px) {
+            height: 562px;
+          }
+
+          @media only screen and (max-width: 950px) {
+            height: 200px;
+          }
+
+          @media only screen and (max-width: 650px) {
+            height: 300px;
+          }
+        }
+      }
+
+      .mid-ad {
+        margin-top: 1rem;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & > iframe {
+          border-radius: 0;
+        }
+
+        .mid-ad-aads970 {
+          @media only screen and (max-width: 1550px) {
+            display: none;
+          }
+        }
+
+        .mid-ad-aads728 {
+          display: none;
+
+          @media only screen and (max-width: 1550px) {
+            display: block;
+          }
+
+          @media only screen and (max-width: 1250px) {
+            display: none;
+          }
+        }
+
+        .mid-ad-aads320 {
+          display: none;
+
+          @media only screen and (max-width: 1250px) {
+            display: block;
+          }
+        }
+      }
+
+      .left-graphs {
+        margin-top: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @media only screen and (max-width: 950px) {
+          display: none;
+        }
+
+        & > * {
+          width: 50%;
+
+          @media only screen and (max-width: 650px) {
+            width: 100%;
+          }
+        }
+
+        & > *:nth-child(1) {
+          margin-right: 0.5rem;
+
+          @media only screen and (max-width: 650px) {
+            margin-right: 0rem;
+          }
+        }
+
+        & > *:nth-child(2) {
+          margin-left: 0.5rem;
+
+          @media only screen and (max-width: 650px) {
+            margin-left: 0rem;
+            margin-top: 1rem;
+          }
+        }
+      }
+
+      .left-faq {
+        margin-top: 1rem;
+        padding: 1rem;
+        background-color: colors.$main-component-bg;
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+
+        @media only screen and (max-width: 950px) {
+          display: none;
+        }
+
+        & > h2 {
+          margin-bottom: 1rem;
+        }
+
+        .faq-part {
+          margin-top: 0.5rem;
+          padding-bottom: 0.5rem;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+          & > h3 {
+            font-size: 16px;
+            font-weight: 600;
+          }
+
+          & > p {
+            margin-top: 0.4rem;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+            word-break: break-word;
+
+            & > a {
+              color: colors.$main-blue;
+              word-break: break-all;
+            }
+          }
+        }
+      }
+    }
+
+    .right {
+      width: 30%;
+      margin-left: 1rem;
+
+      @media only screen and (max-width: 950px) {
+        width: 100%;
+        height: auto;
+        margin-left: 0;
+        margin-top: 1rem;
+      }
+
+      .token-info {
+        background-color: colors.$main-component-bg;
+        border: 1px solid rgba($color: #ffffff, $alpha: 0.1);
+        border-radius: 8px;
+        padding: 1rem;
+
+        .token-info-top {
+          width: 100%;
+
+          .token-info-title {
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+          }
+
+          .token-info-section {
+            font-size: 16px;
+            color: white;
+            height: 40px;
+            margin-top: 0.3rem;
+            border-bottom: 1px solid rgba($color: #ffffff, $alpha: 0.1);
+
+            .key {
+              color: rgba($color: #ffffff, $alpha: 0.6);
+              font-weight: 300;
+              font-size: 15px;
+            }
+
+            .value {
+              & > svg {
+                margin-right: 0.3rem;
+              }
+
+              & > a {
+                color: white;
+              }
+
+              .kyc {
+                color: white;
+                display: block;
+                padding: 0.3rem 1rem;
+                border-radius: 3px;
+                background-color: #df5ff8;
+                font-size: 15px;
+              }
+
+              .audit {
+                display: block;
+                padding: 0.3rem 1rem;
+                border-radius: 3px;
+                background-color: rgba($color: #3c59ff, $alpha: 1);
+                color: white;
+                font-size: 15px;
+              }
+
+              .presale {
+                display: block;
+                padding: 0.3rem 1rem;
+                border-radius: 3px;
+                background-color: #3d9e17;
+                font-size: 15px;
+              }
+            }
+
+            .gain {
+              color: colors.$green;
+            }
+
+            .loss {
+              color: colors.$red;
+            }
+          }
+
+          .section:last-child {
+            border: none;
+          }
+        }
+
+        .token-info-bottom {
+          width: 100%;
+          margin-top: 2rem;
+
+          & > button {
+            width: 100%;
+            font-weight: bold;
+            text-transform: uppercase;
+            box-shadow: colors.$main-blue 0px 0px 3px 0px;
+
+            @media only screen and (max-width: 650px) {
+              margin-top: none;
+            }
+          }
+
+          .no-shadow {
+            box-shadow: none;
+          }
+        }
+      }
+
+      .market-data {
+        background-color: colors.$main-component-bg;
+        border: 1px solid rgba($color: #ffffff, $alpha: 0.1);
+        border-radius: 8px;
+        padding: 1rem;
+        margin-top: 1rem;
+
+        @media only screen and (max-width: 950px) {
+          width: 100%;
+          margin-left: 0;
+          margin-top: 1rem;
+        }
+
+        .market-data-info-top {
+          width: 100%;
+
+          @media only screen and (max-width: 650px) {
+            padding-bottom: 0;
+          }
+
+          .market-data-info-title {
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+          }
+
+          .market-data-section {
+            color: white;
+            height: 40px;
+            margin-top: 0.3rem;
+            border-bottom: 1px solid rgba($color: #ffffff, $alpha: 0.1);
+
+            .key {
+              color: rgba($color: #ffffff, $alpha: 0.6);
+              font-weight: 300;
+              font-size: 15px;
+            }
+
+            .value {
+              letter-spacing: 0.5px;
+
+              & > svg {
+                margin-right: 0.3rem;
+              }
+            }
+
+            .gain {
+              color: colors.$green;
+            }
+
+            .loss {
+              color: colors.$red;
+            }
+          }
+
+          .section:last-child {
+            border: none;
+          }
+        }
+      }
+
+      .desc {
+        margin-top: 1rem;
+        padding: 1rem;
+        border-radius: 8px;
+        border: 1px solid rgba($color: #ffffff, $alpha: 0.1);
+        background-color: colors.$main-component-bg;
+        overflow: hidden;
+        overflow-y: scroll;
+        height: 400px;
+
+        @media only screen and (max-width: 950px) {
+          width: 100%;
+        }
+
+        .desc-title {
+          font-size: 20px;
+          color: white;
+        }
+
+        .auto-desc {
+          margin-top: 0.5rem;
+
+          & > p {
+            font-size: 15px;
+            color: rgba($color: #ffffff, $alpha: 0.6);
+            font-weight: 500;
+            padding: 0;
+
+            @media only screen and (max-width: 650px) {
+              font-size: 13px;
+            }
+
+            & > a {
+              color: rgba($color: #2addcb, $alpha: 0.8);
+            }
+          }
+        }
+
+        .desc-sentences {
+          margin-top: 0.9rem;
+
+          & > p {
+            font-size: 15px;
+            color: rgba($color: #ffffff, $alpha: 0.6);
+            font-weight: 300;
+            padding: 0;
+            overflow-wrap: anywhere;
+
+            @media only screen and (max-width: 650px) {
+              font-size: 13px;
+            }
+          }
+        }
+
+        @media only screen and (max-width: 950px) {
+          width: 100%;
+        }
+      }
+
+      .desc::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      .desc::-webkit-scrollbar-track {
+        border-radius: 10px;
+        background-color: colors.$main-component-bg;
+      }
+
+      .desc::-webkit-scrollbar-thumb {
+        background-color: colors.$body;
+        border-radius: 10px;
+      }
+
+      .ads-area {
+        margin-top: 1rem;
+      }
+
+      .charts-prices {
+        margin-top: 1rem;
+        background-color: colors.$main-component-bg;
+        border: 1px solid rgba($color: #ffffff, $alpha: 0.1);
+        border-radius: 8px;
+        padding: 1rem;
+
+        @media only screen and (max-width: 950px) {
+          margin-top: 1rem;
+        }
+
+        .charts-prices-title {
+          color: white;
+          font-size: 20px;
+          font-weight: bold;
+        }
+
+        .charts-prices-components {
+          flex-wrap: wrap;
+
+          @media only screen and (max-width: 950px) {
+            flex-direction: column;
+            align-items: flex-start;
+            margin: 0;
+          }
+
+          .component {
+            margin-right: 1rem;
+            margin-top: 1rem;
+            padding: 0.6rem 1rem;
+            border-radius: 5px;
+            border: 1px solid rgba($color: #ffffff, $alpha: 0.1);
+
+            @media only screen and (max-width: 1500px) {
+              width: 100%;
+              margin-right: 0;
+            }
+
+            @media only screen and (max-width: 950px) {
+              width: 100%;
+              margin-top: 1rem;
+            }
+
+            & > img {
+              display: block;
+              width: 35px;
+            }
+          }
+
+          .component-title {
+            color: white;
+            font-size: 16px;
+            margin-left: 0.5rem;
+          }
+        }
+      }
+
+      .right-graphs {
+        margin-top: 1rem;
+        display: none;
+
+        @media only screen and (max-width: 950px) {
+          display: block;
+        }
+
+        & > * {
+          width: 50%;
+
+          @media only screen and (max-width: 950px) {
+            width: 100%;
+          }
+        }
+
+        & > *:nth-child(1) {
+          margin-right: 0.5rem;
+
+          @media only screen and (max-width: 950px) {
+            margin-right: 0rem;
+          }
+        }
+
+        & > *:nth-child(2) {
+          margin-left: 0.5rem;
+
+          @media only screen and (max-width: 950px) {
+            margin-left: 0rem;
+            margin-top: 1rem;
+          }
+        }
+
+        .bar-graph {
+          width: 100%;
+        }
+      }
+
+      .right-faq {
+        margin-top: 1rem;
+        padding: 1rem;
+        background-color: colors.$main-component-bg;
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        display: none;
+
+        @media only screen and (max-width: 950px) {
+          display: block;
+        }
+
+        & > h2 {
+          margin-bottom: 1rem;
+        }
+
+        .faq-part {
+          margin-top: 0.5rem;
+          padding-bottom: 0.5rem;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+          & > h3 {
+            font-size: 16px;
+            font-weight: 600;
+          }
+
+          & > p {
+            margin-top: 0.4rem;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+            word-break: break-word;
+
+            & > a {
+              color: colors.$main-blue;
+              word-break: break-all;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.graph-section {
+  margin-top: 2rem;
+}
+
+.table-section {
+  margin-top: 2rem;
+
+  @media only screen and (max-width: 950px) {
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  & > h2 {
+    width: 1500px;
+    border-radius: 5px 5px 0 0;
+    font-size: 2rem;
+    color: white;
+    background-color: colors.$main-component-bg;
+    padding: 1rem 1.5rem;
+
+    @media only screen and (max-width: 1550px) {
+      width: 100%;
+    }
+
+    @media only screen and (max-width: 950px) {
+      width: 100%;
+    }
+  }
+
+  .table-loading {
+    width: 1500px;
+    height: 500px;
+    color: white;
+    font-size: 28px;
+    background-color: colors.$main-component-bg;
+
+    @media only screen and (max-width: 1550px) {
+      width: 100%;
+    }
+
+    & > svg {
+      font-size: 2.5rem;
+      color: white;
+      animation: spin 1.5s infinite;
+    }
+  }
+}
+
+@-moz-keyframes spin {
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.delete {
+  display: none;
+}

@@ -1,0 +1,120 @@
+@use '../../styles/colors' as colors;
+
+.container {
+  width: 100%;
+  border-radius: 5px;
+  background-color: colors.$main-component-bg;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  .top {
+    .icon {
+      svg {
+        font-size: 1.2rem;
+      }
+
+      span {
+        margin-left: 0.5rem;
+        font-size: 1rem;
+        color: rgb(255, 255, 255);
+      }
+    }
+
+    .orange {
+      svg {
+        color: rgba($color: #ff4800, $alpha: 1);
+      }
+    }
+
+    .green {
+      svg {
+        color: rgba($color: #38cc2b, $alpha: 1);
+      }
+    }
+
+    .grey {
+      svg {
+        color: rgba($color: #788991, $alpha: 1);
+      }
+    }
+
+    .more {
+      font-weight: 300;
+      cursor: pointer;
+      font-size: 0.9rem;
+
+      a {
+        color: rgba($color: rgb(87, 146, 255), $alpha: 1);
+      }
+    }
+  }
+
+  .bottom {
+    margin-top: 1rem;
+
+    & > a {
+      margin-top: 0.8rem;
+
+      .left {
+        font-size: 14px;
+        font-weight: 300;
+
+        .order {
+          min-width: 20px;
+          color: white;
+        }
+
+        .img-container {
+          img {
+            width: 35px;
+            height: 35px;
+            object-fit: cover;
+            border-radius: 50%;
+            overflow: hidden;
+          }
+        }
+
+        .name-symbol {
+          margin-left: 0.5rem;
+
+          .name {
+            color: rgba($color: #d4d4d4, $alpha: 1);
+          }
+
+          .symbol {
+            font-weight: bold;
+            color: white;
+
+            & > img {
+              width: 15px;
+              display: block;
+              margin-left: 0.3rem;
+            }
+          }
+        }
+      }
+
+      .right {
+        .change-24h {
+          font-size: 14px;
+          font-weight: 400;
+        }
+
+        .red {
+          color: rgba($color: #ff3333, $alpha: 1);
+        }
+
+        .green {
+          color: rgba($color: #4eec39, $alpha: 1);
+        }
+
+        .grey {
+          color: rgba($color: #bbbbbb, $alpha: 1);
+        }
+      }
+    }
+  }
+}

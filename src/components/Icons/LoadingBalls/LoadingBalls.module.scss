@@ -1,0 +1,18 @@
+.con {
+  width: 40px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .ball {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .ballactive {
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+}

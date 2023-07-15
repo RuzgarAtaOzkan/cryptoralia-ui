@@ -1,0 +1,235 @@
+@use '../../styles/colors.scss' as colors;
+
+.container {
+  max-width: 600px;
+  color: white;
+  border: 1px solid rgba($color: #ffffff, $alpha: 0.1);
+  border-radius: 8px;
+  padding: 1rem;
+  padding-bottom: 4rem;
+  background-color: colors.$main-component-bg;
+
+  @media only screen and (max-width: 650px) {
+    width: 100%;
+  }
+
+  .top {
+    .top-left {
+      & > svg {
+        background: colors.$red;
+        border-radius: 50%;
+        overflow: hidden;
+        padding: 0.4rem;
+        font-size: 34px;
+      }
+
+      .title {
+        margin-left: 0.6rem;
+
+        .main-title {
+          font-size: 19px;
+          font-weight: bold;
+        }
+
+        .domain {
+          color: rgba($color: #ffffff, $alpha: 0.5);
+          font-size: 12px;
+
+          & > a {
+            color: colors.$main;
+          }
+        }
+      }
+    }
+
+    .top-right {
+      text-align: right;
+
+      .last-month-change {
+        font-size: 22px;
+        font-weight: bold;
+        text-align: right;
+      }
+
+      .last-month-change-loss {
+        color: colors.$red;
+      }
+
+      .last-month-change-gain {
+        color: colors.$green;
+      }
+
+      .last-month-change-title {
+        font-size: 12px;
+        color: rgba($color: #ffffff, $alpha: 0.6);
+
+        @media only screen and (max-width: 650px) {
+          width: 90px;
+        }
+      }
+    }
+  }
+
+  .info-area {
+    margin-top: 1rem;
+
+    .global-rank-area {
+      .global-rank-title {
+        font-size: 19px;
+        font-weight: bold;
+      }
+
+      .global-rank-subtitle {
+        color: rgba($color: #ffffff, $alpha: 0.5);
+        font-size: 12px;
+      }
+    }
+
+    .category-rank-area {
+      margin-left: 2rem;
+
+      .category-rank-title {
+        font-size: 19px;
+        font-weight: bold;
+      }
+
+      .category-rank-subtitle {
+        color: rgba($color: #ffffff, $alpha: 0.5);
+        font-size: 12px;
+      }
+    }
+  }
+
+  .chart-area {
+    height: 250px;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    position: relative;
+
+    @media only screen and (max-width: 650px) {
+      height: 200px;
+    }
+
+    .row {
+      position: absolute;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+
+      .row-value {
+        width: 35px;
+        color: rgba($color: #ffffff, $alpha: 0.6);
+        font-size: 12px;
+        position: absolute;
+        top: -8px;
+
+        @media only screen and (max-width: 650px) {
+          font-size: 11px;
+        }
+      }
+
+      .row-line {
+        border-top: 1px solid rgba($color: #ffffff, $alpha: 0.1);
+        width: 100%;
+        margin-left: 2.5rem;
+      }
+
+      &:nth-child(1) {
+        top: 0;
+      }
+
+      &:nth-child(2) {
+        top: 25%;
+      }
+
+      &:nth-child(3) {
+        top: 50%;
+      }
+
+      &:nth-child(4) {
+        top: 75%;
+      }
+
+      &:nth-child(5) {
+        top: 100%;
+      }
+    }
+
+    .columns {
+      margin-left: 2.5rem;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      .column {
+        height: 100%;
+        border-radius: 2px;
+        width: 16.66%;
+        transition: all 0.2s ease-out;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+
+        .column-date {
+          position: absolute;
+          font-size: 11px;
+          color: rgba($color: #ffffff, $alpha: 0.6);
+          top: 108%;
+          text-align: center;
+
+          @media only screen and (max-width: 650px) {
+            font-size: 10px;
+          }
+        }
+
+        .bar {
+          width: 34%;
+          border-radius: 4px;
+          background: linear-gradient(colors.$main, #6564f7);
+
+          @media only screen and (max-width: 650px) {
+            width: 40%;
+          }
+        }
+
+        .hover-info {
+          position: absolute;
+          left: 50%;
+          min-width: 120px;
+          background-color: colors.$nav;
+          box-shadow: rgba($color: #ffffff, $alpha: 0.1) 0px 0px 10px 0px;
+          border-radius: 5px;
+          z-index: 1;
+          padding: 0.5rem 0.7rem;
+          font-size: 13px;
+
+          .hover-info-date {
+            font-weight: bold;
+          }
+
+          .hover-info-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: linear-gradient(colors.$main, #6564f7);
+            margin-right: 0.6rem;
+          }
+        }
+
+        .hover-info-right {
+          right: 50%;
+        }
+      }
+
+      .column:hover {
+        background-color: rgba($color: #ffffff, $alpha: 0.06);
+      }
+    }
+  }
+}

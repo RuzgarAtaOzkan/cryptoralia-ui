@@ -1,0 +1,49 @@
+@use '../../styles/colors' as colors;
+
+.ads-section {
+  margin-top: 2rem;
+}
+
+.airdrops-section {
+  margin-top: 2rem;
+
+  @media only screen and (max-width: 950px) {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .titles {
+    font-size: 2rem;
+    color: white;
+    border-radius: 5px 5px 0 0;
+    width: 1500px;
+    background-color: colors.$main-component-bg;
+    box-shadow: rgba(149, 157, 165, 0.1) 0px 8px 24px;
+    padding: 1rem 1.5rem;
+
+    @media only screen and (max-width: 1550px) {
+      width: 100%;
+    }
+
+    @media only screen and (max-width: 950px) {
+      width: 100%;
+    }
+
+    & > h1 {
+      font-size: 2rem;
+    }
+
+    & > h2 {
+      margin-top: 0.5rem;
+      font-size: 1rem;
+      font-weight: 300;
+      color: rgba($color: #ffffff, $alpha: 0.7);
+    }
+  }
+}
+
+.faq-section {
+  & > * {
+    margin-top: 2rem;
+  }
+}

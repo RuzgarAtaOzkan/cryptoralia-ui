@@ -1,0 +1,42 @@
+@use '../../styles/colors' as colors;
+
+.loading {
+  height: 100vh;
+  background-color: colors.$body;
+
+  svg {
+    font-size: 4rem;
+    animation: spin 1.2s infinite;
+    color: white;
+  }
+
+  @-moz-keyframes spin {
+    0% {
+      transform: rotateZ(0deg);
+    }
+
+    100% {
+      transform: rotateZ(360deg);
+    }
+  }
+
+  @-webkit-keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}

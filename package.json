@@ -1,0 +1,29 @@
+{
+  "name": "cryptoralia-ui",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "pm2": "pm2 start npm --name cryptoralia-ui -- start -- --port 4000 -H 127.0.0.1"
+  },
+  "dependencies": {
+    "axios": "^1.2.1",
+    "bignumber.js": "^9.1.1",
+    "classnames": "^2.3.2",
+    "next": "^12.1.0",
+    "quontral": "^1.0.26",
+    "react": "^17.0.2",
+    "react-calendar": "^4.0.0",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.7.1",
+    "react-ssr-adsense": "^1.0.1",
+    "sass": "^1.57.0",
+    "web3": "^1.8.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.30.0",
+    "eslint-config-next": "^13.0.7"
+  }
+}

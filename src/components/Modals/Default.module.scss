@@ -1,0 +1,80 @@
+@use '../../styles/colors' as colors;
+
+.container {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -5;
+  opacity: 0;
+  transition: all 0.1s ease-out;
+
+  .background {
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: #000000, $alpha: 0.7);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+  }
+
+  .modal {
+    width: 500px;
+    min-height: 250px;
+    padding: 2rem;
+    border-radius: 10px;
+    z-index: 100;
+    color: white;
+    background-color: colors.$header;
+
+    @media only screen and (max-width: 650px) {
+      width: 100%;
+      height: 100%;
+      padding: 2rem 1.5rem;
+      border-radius: 0;
+    }
+
+    .title-area {
+      svg {
+        font-size: 2rem;
+        cursor: pointer;
+      }
+    }
+
+    .subtitle {
+      margin-top: 0.5rem;
+      font-size: 13px;
+      color: rgba($color: #ffffff, $alpha: 0.6);
+
+      span {
+        color: colors.$main-blue;
+        cursor: pointer;
+      }
+    }
+
+    .input-area {
+      margin-top: 1.5rem;
+
+      .title {
+        font-size: 14px;
+        font-weight: 500;
+
+        @media only screen and (max-width: 650px) {
+          margin-top: 1rem;
+        }
+      }
+    }
+
+    .button {
+      margin-top: 2rem;
+      width: 100%;
+    }
+  }
+}
+
+.active-container {
+  opacity: 1;
+  z-index: 21;
+}

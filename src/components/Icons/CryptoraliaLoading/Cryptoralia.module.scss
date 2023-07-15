@@ -1,0 +1,26 @@
+.img {
+  max-width: 18px;
+  max-height: 18px;
+  display: block;
+  object-fit: cover;
+  animation: spin 0.8s infinite linear;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  border-left: 2px solid rgba(255, 255, 255, 0.6);
+  border-right: 2px solid rgba(255, 255, 255, 0.6);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+  border-radius: 30%;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateZ(360deg);
+  }
+}

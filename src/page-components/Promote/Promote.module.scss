@@ -1,0 +1,323 @@
+@use '../../styles/colors' as colors;
+
+.promote-section {
+  margin-top: 2rem;
+
+  .promote-area {
+    width: 1500px;
+    min-height: 800px;
+    color: white;
+
+    @media only screen and (max-width: 950px) {
+      display: block;
+    }
+
+    & > * {
+      text-align: center;
+    }
+
+    .promote-area-left {
+      border: 1px solid rgba($color: #ffffff, $alpha: 0.15);
+      padding: 1rem;
+      border-radius: 5px;
+      width: 32%;
+      min-height: 600px;
+
+      @media only screen and (max-width: 1250px) {
+        width: 100%;
+      }
+
+      @media only screen and (max-width: 950px) {
+        margin-left: 0;
+        text-align: center;
+      }
+
+      .promote-order {
+        font-size: 45px;
+        font-weight: bold;
+      }
+
+      .promote-title {
+        font-size: 25px;
+        font-weight: bold;
+      }
+
+      .promote-desc {
+        font-size: 18px;
+      }
+
+      .promote-types {
+        margin-top: 2rem;
+
+        @media only screen and (max-width: 1250px) {
+          width: 100%;
+        }
+
+        @media only screen and (max-width: 950px) {
+          width: 100%;
+        }
+
+        @media only screen and (max-width: 650px) {
+          width: 100%;
+        }
+
+        & > * {
+          width: 360px;
+          margin-top: 1rem;
+
+          @media only screen and (max-width: 1250px) {
+            width: 100%;
+          }
+
+          @media only screen and (max-width: 950px) {
+            width: 380px;
+          }
+
+          @media only screen and (max-width: 650px) {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .promote-area-mid {
+      border: 1px solid rgba($color: #ffffff, $alpha: 0.15);
+      padding: 1rem;
+      border-radius: 5px;
+      width: 32%;
+      min-height: 600px;
+
+      @media only screen and (max-width: 1250px) {
+        width: 100%;
+        margin-left: 2rem;
+      }
+
+      @media only screen and (max-width: 950px) {
+        margin-top: 3rem;
+        margin-left: 0;
+        text-align: center;
+      }
+
+      .promote-order {
+        font-size: 45px;
+        font-weight: bold;
+      }
+
+      .date-title {
+        font-size: 25px;
+        font-weight: bold;
+
+        h1 {
+          font-size: 32px;
+          border-bottom: 1px solid rgba($color: #ffffff, $alpha: 0.1);
+        }
+      }
+
+      .date-desc {
+        font-size: 18px;
+      }
+
+      .calendar-area {
+        margin-top: 2rem;
+
+        @media only screen and (max-width: 950px) {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        & > * {
+          width: 360px;
+
+          @media only screen and (max-width: 1250px) {
+            width: 100%;
+          }
+
+          @media only screen and (max-width: 950px) {
+            width: 380px;
+          }
+
+          @media only screen and (max-width: 650px) {
+            width: 100%;
+          }
+        }
+      }
+
+      .add-btn-area {
+        margin-top: 1rem;
+
+        @media only screen and (max-width: 950px) {
+          display: flex;
+          justify-content: center;
+        }
+
+        & > * {
+          width: 360px;
+
+          @media only screen and (max-width: 1250px) {
+            width: 100%;
+          }
+
+          @media only screen and (max-width: 950px) {
+            width: 380px;
+          }
+
+          @media only screen and (max-width: 650px) {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .promote-area-right {
+      border: 1px solid rgba($color: #ffffff, $alpha: 0.15);
+      padding: 1rem;
+      border-radius: 5px;
+      width: 32%;
+      min-height: 600px;
+
+      @media only screen and (max-width: 1250px) {
+        margin-left: 2rem;
+      }
+
+      @media only screen and (max-width: 950px) {
+        margin-top: 3rem;
+        margin-left: 0;
+        width: 100%;
+        text-align: center;
+      }
+
+      .promote-order {
+        font-size: 45px;
+        font-weight: bold;
+      }
+
+      .result-title {
+        font-size: 25px;
+        font-weight: bold;
+
+        h1 {
+          font-size: 32px;
+          border-bottom: 1px solid rgba($color: #ffffff, $alpha: 0.1);
+        }
+      }
+
+      .result-desc {
+        font-size: 18px;
+      }
+
+      .selected-promotions-table-area {
+        margin-top: 2rem;
+        width: 100%;
+
+        @media only screen and (max-width: 950px) {
+          justify-content: center;
+        }
+
+        @media only screen and (max-width: 650px) {
+          display: block;
+        }
+
+        .selected-promotions-table {
+          width: 100%;
+
+          @media only screen and (max-width: 950px) {
+            width: auto;
+          }
+
+          .titles {
+            font-weight: bold;
+            border-bottom: 1px solid rgba($color: #ffffff, $alpha: 0.2);
+            background-color: colors.$table-title;
+            padding: 0.6rem;
+            text-align: left;
+
+            & > * {
+              margin: 0 0.6rem;
+            }
+
+            .order {
+              width: 15px;
+            }
+
+            .date {
+              width: 170px;
+
+              @media only screen and (max-width: 650px) {
+                width: 100px;
+              }
+            }
+
+            .type {
+              width: 100px;
+
+              @media only screen and (max-width: 650px) {
+                width: 60px;
+              }
+            }
+
+            .price {
+              width: 50px;
+            }
+          }
+
+          .rows {
+            border-bottom: 1px solid rgba($color: #ffffff, $alpha: 0.1);
+            padding: 0.6rem;
+            text-align: left;
+            background-color: colors.$main-component-bg;
+
+            & > * {
+              margin: 0 0.6rem;
+            }
+
+            .order {
+              width: 15px;
+            }
+
+            .date {
+              width: 170px;
+
+              span {
+                font-weight: bold;
+                letter-spacing: 0.5px;
+              }
+
+              @media only screen and (max-width: 650px) {
+                width: 100px;
+              }
+            }
+
+            .type {
+              width: 100px;
+
+              @media only screen and (max-width: 650px) {
+                width: 60px;
+              }
+            }
+
+            .price {
+              width: 50px;
+            }
+          }
+        }
+      }
+
+      .telegram-btn-area {
+        margin-top: 1rem;
+
+        button {
+          //width: 75%;
+
+          @media only screen and (max-width: 950px) {
+            width: 300px;
+          }
+
+          @media only screen and (max-width: 650px) {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

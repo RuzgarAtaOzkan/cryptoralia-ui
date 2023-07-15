@@ -1,0 +1,464 @@
+@use '../../styles/colors' as colors;
+
+.container {
+  width: 1500px;
+  font-weight: 400;
+  color: white;
+  display: none;
+  border: 1px solid colors.$table-border;
+  border-bottom: none;
+  border-radius: 4px 4px 0 0;
+  overflow: hidden;
+  background-color: colors.$component-bg;
+
+  @media only screen and (max-width: 1550px) {
+    width: 100%;
+  }
+
+  @media only screen and (max-width: 950px) {
+    display: block;
+  }
+
+  .title-area {
+    padding: 1rem;
+
+    .title-area-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+
+      & > h1 {
+        font-size: 1.8rem;
+        font-weight: 700;
+      }
+    }
+  }
+
+  .tables {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    .table-left {
+      z-index: 2;
+      width: 175px;
+      box-shadow: rgba(0, 0, 0, 0.24) 2px 0px 8px;
+
+      .titles {
+        border-top: 1px solid colors.$table-border;
+        border-bottom: 1px solid colors.$table-border;
+
+        & > div {
+          padding: 0.4rem 0.8rem;
+          display: flex;
+          align-items: center;
+
+          span {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.1s ease-in;
+          }
+
+          span:hover {
+            color: rgba($color: #7bb0ff, $alpha: 1);
+          }
+        }
+
+        .order {
+          width: 35px;
+        }
+
+        .logo {
+          width: 40px;
+        }
+
+        .symbol-name {
+          width: 150px;
+          outline: none;
+        }
+
+        .network {
+          width: 150px;
+        }
+
+        .price {
+          width: 200px;
+        }
+
+        .change-24h {
+          width: 200px;
+        }
+
+        .marketcap {
+          width: 200px;
+        }
+
+        .launch-date {
+          width: 150px;
+        }
+
+        .votes {
+          width: 150px;
+        }
+      }
+
+      .rows {
+        & > a {
+          color: white;
+          border-bottom: 1px solid colors.$table-border;
+          height: 80px;
+
+          & > div {
+            padding: 0.6rem 0.8rem;
+            display: flex;
+            align-items: center;
+            font-size: 15px;
+          }
+
+          .order {
+            font-size: 12px;
+            font-weight: 200;
+            width: 35px;
+          }
+
+          .logo {
+            width: 40px;
+            padding: 0;
+
+            & > img {
+              display: block;
+              width: 40px;
+              height: 40px;
+              object-fit: cover;
+              border-radius: 50%;
+              overflow: hidden;
+            }
+          }
+
+          .symbol-name {
+            width: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            overflow-wrap: anywhere;
+
+            .symbol {
+              font-weight: 400;
+
+              & > img {
+                width: 15px;
+                margin-left: 0.3rem;
+                display: block;
+              }
+            }
+
+            .name {
+              font-size: 12px;
+              font-weight: 300;
+              color: rgba($color: #ffffff, $alpha: 0.6);
+            }
+          }
+
+          .network {
+            width: 150px;
+          }
+
+          .price {
+            width: 200px;
+            letter-spacing: 0.8px;
+          }
+
+          .change-24h {
+            width: 200px;
+            color: rgba($color: #ffffff, $alpha: 0.6);
+
+            svg {
+              margin-right: 0.3rem;
+            }
+          }
+
+          .marketcap {
+            width: 200px;
+            letter-spacing: 0.8px;
+          }
+
+          .launch-date {
+            width: 150px;
+          }
+
+          .votes {
+            width: 150px;
+
+            .vote-btn {
+              font-size: 15px;
+              width: 100%;
+              border-radius: 5px;
+              border: 1px solid colors.$main-blue;
+              color: white;
+              padding: 0.4rem 0.8rem;
+              box-shadow: colors.$main-blue 0px 0px 2px 0px;
+            }
+
+            .vote-btn-voted {
+              background-color: colors.$main-blue;
+              color: colors.$primary-input-text;
+            }
+          }
+
+          .loss {
+            color: colors.$red;
+          }
+
+          .gain {
+            color: colors.$green;
+          }
+        }
+
+        & > a:hover {
+          background-color: #242449;
+        }
+
+        .promoted-row {
+          background-color: #27274e;
+        }
+
+        .promoted-row:hover {
+          background-color: #2b2b55;
+        }
+      }
+    }
+
+    .table-right-scroll {
+      overflow: hidden;
+      overflow-x: scroll;
+
+      .table-right {
+        width: 950px;
+
+        .titles {
+          border-top: 1px solid colors.$table-border;
+          border-bottom: 1px solid colors.$table-border;
+
+          & > div {
+            min-width: 50px;
+            padding: 0.4rem 0.8rem;
+            display: flex;
+            align-items: center;
+
+            span {
+              font-size: 12px;
+              font-weight: 600;
+              letter-spacing: 1px;
+              cursor: pointer;
+              transition: all 0.1s ease-in;
+            }
+
+            span:hover {
+              color: rgba($color: #7bb0ff, $alpha: 1);
+            }
+          }
+
+          .order {
+            @media only screen and (max-width: 650px) {
+              min-width: 35px;
+              width: 35px;
+            }
+          }
+
+          .logo {
+            width: 50px;
+          }
+
+          .name {
+            width: 200px;
+            outline: none;
+
+            @media only screen and (max-width: 1250px) {
+              width: 150px;
+            }
+          }
+
+          .network {
+            width: 100px;
+          }
+
+          .price {
+            width: 150px;
+          }
+
+          .change-24h {
+            width: 150px;
+          }
+
+          .marketcap {
+            width: 200px;
+          }
+
+          .launch-date {
+            width: 150px;
+          }
+
+          .votes {
+            width: 200px;
+            padding-left: 2rem;
+          }
+        }
+
+        .rows {
+          & > a {
+            color: white;
+            border-bottom: 1px solid colors.$table-border;
+            height: 80px;
+
+            & > div {
+              min-width: 50px;
+              padding: 0.6rem 0.8rem;
+              display: flex;
+              align-items: center;
+              font-size: 15px;
+            }
+
+            .order {
+              font-size: 12px;
+              font-weight: 200;
+
+              @media only screen and (max-width: 650px) {
+                min-width: 35px;
+                width: 35px;
+              }
+            }
+
+            .logo {
+              width: 50px;
+              padding: 0;
+
+              img {
+                width: 40px;
+                border-radius: 50%;
+                overflow: hidden;
+              }
+            }
+
+            .symbol-name {
+              width: 200px;
+              display: flex;
+              justify-content: center;
+              align-items: flex-start;
+              flex-direction: column;
+
+              @media only screen and (max-width: 1250px) {
+                width: 150px;
+              }
+
+              .symbol {
+                font-weight: 400;
+              }
+
+              .name {
+                font-size: 14px;
+                font-weight: 300;
+                color: rgba($color: #ffffff, $alpha: 0.6);
+              }
+            }
+
+            .network {
+              width: 100px;
+
+              img {
+                display: block;
+                width: 18px;
+                height: 18px;
+                object-fit: cover;
+                border-radius: 50%;
+              }
+
+              div {
+                margin-left: 0.4rem;
+              }
+            }
+
+            .price {
+              width: 150px;
+              letter-spacing: 0.8px;
+            }
+
+            .price-reduce {
+              font-size: 7px;
+            }
+
+            .change-24h {
+              width: 150px;
+              color: rgba($color: #ffffff, $alpha: 0.6);
+
+              svg {
+                margin-right: 0.3rem;
+              }
+            }
+
+            .marketcap {
+              width: 200px;
+              letter-spacing: 0.8px;
+            }
+
+            .launch-date {
+              width: 150px;
+            }
+
+            .votes {
+              width: 200px;
+              padding-left: 2rem;
+
+              .vote-btn {
+                text-align: center;
+                width: 75%;
+                border-radius: 5px;
+                border: 1px solid colors.$main-blue;
+                color: white;
+                font-size: 14px;
+                padding: 0.4rem 0.5rem;
+                box-shadow: colors.$main-blue 0px 0px 2px 0px;
+              }
+
+              .vote-btn-voted {
+                background-color: colors.$main-blue;
+                color: colors.$primary-input-text;
+              }
+            }
+
+            .loss {
+              color: colors.$red;
+            }
+
+            .gain {
+              color: colors.$green;
+            }
+          }
+
+          & > a:hover {
+            background-color: #242449;
+          }
+
+          .promoted-row {
+            background-color: #27274e;
+          }
+
+          .promoted-row:hover {
+            background-color: #2b2b55;
+          }
+        }
+      }
+    }
+  }
+}
+
+.table-right-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.table-right-scroll {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

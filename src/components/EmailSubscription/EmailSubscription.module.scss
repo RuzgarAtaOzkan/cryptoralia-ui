@@ -1,0 +1,88 @@
+@use '../../styles/colors' as colors;
+
+.container {
+  background-color: colors.$main-component-bg;
+  padding: 7rem 0;
+
+  .email-subscription {
+    width: 1250px;
+
+    .left {
+      @media only screen and (max-width: 950px) {
+        width: 100%;
+        padding: 1rem;
+      }
+
+      .title {
+        color: white;
+
+        @media only screen and (max-width: 950px) {
+          text-align: center;
+          padding: 1rem;
+        }
+
+        :last-child {
+          font-weight: bold;
+        }
+
+        span {
+          font-size: 25px;
+        }
+      }
+
+      .subtitle {
+        font-size: 14px;
+        color: rgba($color: #d5d8db, $alpha: 1);
+        margin-top: 0.5rem;
+
+        @media only screen and (max-width: 950px) {
+          text-align: center;
+          padding: 1rem;
+        }
+      }
+
+      .subscription {
+        margin-top: 2rem;
+
+        @media only screen and (max-width: 950px) {
+          margin-left: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        @media only screen and (max-width: 650px) {
+          flex-direction: column;
+        }
+
+        button {
+          margin-left: 1rem;
+          padding: 1rem 1.5rem;
+
+          @media only screen and (max-width: 650px) {
+            margin: 0;
+            margin-top: 1rem;
+          }
+        }
+      }
+    }
+
+    .right {
+      @media only screen and (max-width: 950px) {
+        margin-top: 2rem;
+      }
+
+      img {
+        display: none;
+        width: 400px;
+        border-radius: 5px;
+        margin-left: 2rem;
+
+        @media only screen and (max-width: 650px) {
+          width: 100%;
+          margin-left: 0rem;
+        }
+      }
+    }
+  }
+}

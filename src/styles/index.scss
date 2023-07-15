@@ -1,0 +1,17 @@
+// FONTS
+@use 'fonts' as fonts;
+
+// APPLICATION
+@use 'app' as app;
+
+// COLORS
+@use 'colors' as colors;
+
+// COMMON
+@use 'common' as common;
+
+// PAGES
+@use 'pages/index' as pages;
+
+// COMPONENTS
+@use 'components/calendar.css'; // be carefull with the class namespaces because it is css.

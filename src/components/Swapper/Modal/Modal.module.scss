@@ -1,0 +1,150 @@
+@use '../../../styles/colors.scss' as colors;
+
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+
+  .bg {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  .txnmodal {
+    width: 500px;
+    border-radius: 5px;
+    padding: 4rem 4rem 2rem 4rem;
+    border-radius: 6px;
+    background-color: colors.$component-bg;
+    text-align: center;
+
+    @media only screen and (max-width: 650px) {
+      width: 100%;
+      height: 100%;
+      padding: 2rem 2rem 1rem 2rem;
+    }
+
+    .txnmodal-states {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      & > * {
+        margin: 0 0.8rem;
+      }
+
+      .stick {
+        border-top: 2px solid colors.$main;
+        width: 40px;
+      }
+    }
+
+    .txnmodal-title {
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+
+    .txnmodal-desc {
+      margin-top: 1rem;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .txnmodal-err {
+      font-size: 14px;
+      letter-spacing: 0.2px;
+
+      & > span {
+        color: colors.$red;
+      }
+    }
+
+    .txnmodal-link {
+      margin-top: 1rem;
+
+      & > a {
+        text-decoration: underline;
+        color: rgba(255, 255, 255, 0.4);
+        font-size: 12px;
+      }
+    }
+
+    .txnmodal-close {
+      margin-top: 2rem;
+
+      & > * {
+        width: 50%;
+
+        @media only screen and (max-width: 650px) {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .slippagemodal {
+    width: 500px;
+    border-radius: 5px;
+    padding: 4rem 4rem 2rem 4rem;
+    border-radius: 6px;
+    background-color: colors.$component-bg;
+    text-align: center;
+    font-size: 15px;
+
+    @media only screen and (max-width: 650px) {
+      width: 100%;
+      height: 100%;
+      padding: 2rem;
+      align-items: flex-start;
+    }
+
+    .slippagemodal-top {
+      .slippagemodal-top-value {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 0.4rem;
+        padding: 0.8rem 1.4rem;
+        border-radius: 6px;
+        background-color: rgba(255, 255, 255, 0.12);
+        cursor: pointer;
+
+        @media only screen and (max-width: 650px) {
+          padding: 0.6rem 1.2rem;
+        }
+
+        & > input {
+          width: 100%;
+          outline: none;
+          border: none;
+          background-color: transparent;
+          color: white;
+          font-size: 15px;
+        }
+      }
+
+      .slippagemodal-top-valueselected {
+        background-color: colors.$main;
+      }
+    }
+
+    .slippagemodal-bottom {
+      margin-top: 3rem;
+
+      & > * {
+        width: 100%;
+      }
+    }
+  }
+}

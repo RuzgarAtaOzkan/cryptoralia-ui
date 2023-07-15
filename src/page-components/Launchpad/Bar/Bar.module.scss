@@ -1,0 +1,303 @@
+@use '../../../styles/colors.scss' as colors;
+
+.container {
+  border-radius: 2px;
+  background-color: colors.$main-component-bg;
+  padding: 1.5rem;
+  position: relative;
+  border: 1px solid rgba($color: #ffffff, $alpha: 0.1);
+  border-radius: 5px;
+
+  @media only screen and (max-width: 650px) {
+    padding: 1rem;
+  }
+
+  .bg-logo {
+    left: 48%;
+    top: 50%;
+    width: 200px;
+    position: absolute;
+    box-shadow: rgba($color: #ffffff, $alpha: 0.1) 0px 0px 20px 5px;
+
+    & > img {
+      position: absolute;
+      opacity: 0.4;
+      display: block;
+      width: 200px;
+    }
+  }
+
+  .top {
+    @media only screen and (max-width: 650px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .top-left {
+      height: 90px;
+
+      @media only screen and (max-width: 650px) {
+        height: 120px;
+      }
+
+      & > img {
+        display: block;
+        height: 100%;
+        border-radius: 3px;
+        border: 1px solid rgba($color: #ffffff, $alpha: 0.1);
+      }
+
+      .name-price {
+        margin-left: 2rem;
+        height: 100%;
+
+        @media only screen and (max-width: 650px) {
+          margin-left: 1rem;
+        }
+
+        .name-symbol-network {
+          @media only screen and (max-width: 650px) {
+            flex-direction: column;
+            align-items: flex-start;
+          }
+
+          .name {
+            font-weight: 600;
+            font-size: 26px;
+
+            @media only screen and (max-width: 950px) {
+              font-size: 22px;
+            }
+          }
+
+          .symbol-network {
+            .symbol {
+              font-size: 20px;
+              margin-left: 0.8rem;
+              font-weight: 300;
+
+              @media only screen and (max-width: 950px) {
+                font-size: 18px;
+              }
+
+              @media only screen and (max-width: 650px) {
+                margin-left: 0;
+              }
+            }
+
+            .network {
+              margin-left: 1rem;
+
+              @media only screen and (max-width: 650px) {
+                margin-left: 0.5rem;
+              }
+
+              & > img {
+                border: 1px solid rgba($color: #ffffff, $alpha: 0.1);
+                border-radius: 50%;
+                display: block;
+                width: 25px;
+                height: 25px;
+                overflow: hidden;
+                object-fit: cover;
+              }
+            }
+          }
+        }
+
+        .price {
+          font-weight: 400;
+          font-size: 18px;
+          opacity: 0.8;
+        }
+      }
+    }
+
+    .top-right {
+      height: 90px;
+      width: 400px;
+      margin-left: 3rem;
+
+      @media only screen and (max-width: 650px) {
+        margin-left: 0;
+        height: 80px;
+        margin-top: 2rem;
+        width: 100%;
+      }
+
+      .end-date-title {
+        font-size: 18px;
+        font-weight: 300;
+        opacity: 0.8;
+      }
+
+      .end-date {
+        width: 100%;
+
+        & > div {
+          font-weight: 550;
+          font-size: 34px;
+          letter-spacing: 1px;
+          display: flex;
+          justify-content: flex-start;
+          align-items: baseline;
+          margin-right: 1.5rem;
+
+          @media only screen and (max-width: 950px) {
+            font-size: 28px;
+          }
+
+          @media only screen and (max-width: 650px) {
+            margin-right: 1rem;
+          }
+
+          & > span {
+            font-size: 18px;
+            font-weight: 300;
+          }
+        }
+      }
+    }
+  }
+
+  .mid {
+    margin-top: 2rem;
+
+    .mid-top {
+      font-size: 15px;
+      letter-spacing: 0.3px;
+      font-weight: 400;
+      color: rgba($color: #ffffff, $alpha: 0.8);
+
+      .total-raised {
+        & > span {
+          @media only screen and (max-width: 650px) {
+            display: none;
+          }
+        }
+      }
+
+      .target {
+        & > span {
+          @media only screen and (max-width: 650px) {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .mid-bottom {
+      margin-top: 1rem;
+
+      .bar {
+        height: 28px;
+        border-radius: 60px;
+        background-color: colors.$header;
+        overflow: hidden;
+        position: relative;
+        transition: all 0.2s ease-out;
+
+        .progress {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 0%;
+          height: 100%;
+          background-color: #29b6a8;
+          overflow: hidden;
+          transition: all 0.2s ease-out;
+
+          .reflection {
+            border-radius: 60px 0 0 60px;
+            position: absolute;
+            height: 100%;
+            left: 0;
+            width: 0;
+            background-color: rgba($color: #ffffff, $alpha: 1);
+          }
+
+          .reflection-active {
+            opacity: 0;
+            width: 100%;
+            transition: all 1s ease-out;
+          }
+        }
+      }
+    }
+  }
+
+  .bottom {
+    margin-top: 2rem;
+
+    @media only screen and (max-width: 650px) {
+      flex-wrap: wrap;
+    }
+
+    & > a {
+      color: white;
+      margin-left: 1rem;
+      width: 38px;
+      height: 38px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba($color: #ffffff, $alpha: 0.15);
+      border-radius: 5px;
+      padding: 0.5rem;
+      font-size: 22px;
+
+      @media only screen and (max-width: 650px) {
+        margin-left: 0;
+        margin-right: 0.6rem;
+        margin-bottom: 1rem;
+        width: 32px;
+        height: 32px;
+        padding: 0.4rem;
+      }
+
+      & > svg {
+        transition: all 0.2s ease-out;
+      }
+
+      & > img {
+        display: block;
+        width: 100%;
+      }
+    }
+
+    & > a:hover {
+      color: rgba($color: #ffffff, $alpha: 0.6);
+    }
+  }
+}
+
+@keyframes reflection {
+  0% {
+    width: 0;
+    opacity: 1;
+  }
+
+  60% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0;
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes reflection {
+  0% {
+    width: 0;
+  }
+
+  60% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0;
+    opacity: 0;
+  }
+}

@@ -1,0 +1,65 @@
+.container {
+  width: 30px;
+  height: 24px;
+  cursor: pointer;
+
+  @media only screen and (max-width: 950px) {
+    width: 26px;
+    height: 16px;
+  }
+
+  .bars {
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    div {
+      width: 100%;
+      height: 1px;
+      background-color: white;
+      border-radius: 5px;
+    }
+
+    .top {
+      position: absolute;
+      top: 0%;
+    }
+
+    .mid {
+      opacity: 1;
+      position: absolute;
+      top: 50%;
+      left: 0;
+    }
+
+    .bottom {
+      position: absolute;
+      top: 100%;
+    }
+  }
+}
+
+.active {
+  .bars {
+    .top {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: rotateZ(45deg);
+    }
+
+    .mid {
+      opacity: 0;
+      display: none;
+    }
+
+    .bottom {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: rotateZ(-45deg);
+    }
+  }
+}

@@ -1,0 +1,52 @@
+@use '../../styles/colors' as colors;
+
+.my-airdrops-section {
+  margin-top: 2rem;
+  color: white;
+  min-height: 600px;
+
+  .my-airdrops {
+    width: 1500px;
+
+    @media only screen and (max-width: 1500px) {
+      width: 100%;
+    }
+
+    .title-area {
+      margin-bottom: 1rem;
+      border-bottom: 1px solid rgba($color: #ffffff, $alpha: 0.1);
+      padding-bottom: 0.6rem;
+
+      @media only screen and (max-width: 650px) {
+        justify-content: space-between;
+      }
+
+      .add-btn {
+        margin-left: 1rem;
+        padding: 0.3rem 0.6rem;
+        background-color: colors.$main-blue;
+        color: colors.$primary-input-text;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 13px;
+        font-weight: 500;
+
+        @media only screen and (max-width: 650px) {
+          font-size: 16px;
+          padding: 0.4rem 0.8rem;
+        }
+
+        .icon-container {
+          margin-right: 0.4rem;
+          background-color: colors.$primary-input-text;
+          border-radius: 2px;
+          color: colors.$main-blue;
+        }
+      }
+    }
+
+    .load-more-btn {
+      margin-top: 2rem;
+    }
+  }
+}

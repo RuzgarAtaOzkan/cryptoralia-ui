@@ -1,0 +1,124 @@
+@use '../../styles/colors' as colors;
+
+.toaster-section {
+  .alerts {
+    position: fixed;
+    right: 50px;
+    top: 50px;
+    width: 300px;
+    height: 0;
+    z-index: 100;
+
+    @media only screen and (max-width: 650px) {
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 60px;
+    }
+
+    .alert {
+      position: relative;
+      left: 0px;
+      width: 100%;
+      color: white;
+      transition: all 0.3s ease-in-out;
+      border-radius: 3px;
+      overflow: hidden;
+      margin-bottom: 1rem;
+      animation: slide-left 0.5s;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      background-color: #3b3b7c;
+      height: 60px;
+
+      @media only screen and (max-width: 650px) {
+        width: 100%;
+        animation: slide-bottom 0.8s;
+        margin-bottom: 0;
+        padding: 0.6rem 0.8rem;
+        position: absolute;
+        top: -100%;
+        border-radius: 2px;
+        height: 60px;
+      }
+
+      .type {
+        height: 100%;
+        font-size: 1.6rem;
+        padding: 0 0.6rem;
+
+        @media only screen and (max-width: 650px) {
+          border-radius: 4px;
+        }
+      }
+
+      .typesuccess {
+        background-color: colors.$green;
+
+        & > svg {
+          color: #3b3b7c;
+        }
+      }
+
+      .typeerror {
+        background-color: colors.$red;
+
+        & > svg {
+          color: white;
+        }
+      }
+
+      .typeinfo {
+        background-color: rgb(68, 108, 236);
+
+        & > svg {
+          color: #3b3b7c;
+        }
+      }
+
+      .message {
+        margin: 0 1rem;
+        width: 60%;
+
+        & > a {
+          text-decoration: underline;
+          color: white;
+        }
+      }
+
+      .id {
+        color: rgba(255, 255, 255, 0.6);
+        margin-right: 1rem;
+      }
+    }
+
+    .pos-abs {
+      position: absolute;
+    }
+
+    .fade {
+      opacity: 0;
+    }
+  }
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-bottom {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}

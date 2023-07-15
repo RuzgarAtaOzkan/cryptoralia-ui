@@ -1,0 +1,78 @@
+@use '../../styles/colors.scss' as colors;
+
+.cookie-consent-section {
+  position: fixed;
+  bottom: 10%;
+  left: 2rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  color: rgba($color: #4d4d4d, $alpha: 1);
+  width: 600px;
+  z-index: 35;
+  opacity: 0;
+  visibility: hidden;
+
+  @media only screen and (max-width: 950px) {
+    right: 5%;
+  }
+
+  @media only screen and (max-width: 650px) {
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    top: auto;
+    border-radius: 5px;
+    padding: 1rem;
+  }
+
+  .container {
+    .description {
+      font-size: 14px;
+
+      @media only screen and (max-width: 650px) {
+        font-size: 13px;
+      }
+    }
+
+    .buttons {
+      margin-top: 1.5rem;
+
+      @media only screen and (max-width: 650px) {
+        font-size: 13px;
+        margin-top: 1rem;
+      }
+
+      & > * {
+        height: 45px;
+
+        @media only screen and (max-width: 650px) {
+          font-size: 13px;
+          height: 40px;
+        }
+      }
+
+      .accept-btn {
+        width: 100%;
+        margin-right: 1rem;
+      }
+
+      .reject-btn {
+        @media only screen and (max-width: 650px) {
+          width: 30%;
+        }
+      }
+    }
+  }
+}
+
+.cookie-consent-section-active {
+  transition: all 0.6s ease-out;
+  bottom: 5%;
+  visibility: visible;
+  opacity: 1;
+
+  @media only screen and (max-width: 650px) {
+    bottom: 0;
+  }
+}

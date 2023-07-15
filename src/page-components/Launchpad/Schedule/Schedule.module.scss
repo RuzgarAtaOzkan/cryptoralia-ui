@@ -1,0 +1,91 @@
+@use '../../../styles/colors' as colors;
+
+.container {
+  background-color: colors.$main-component-bg;
+  margin-top: 1.5rem;
+  border-radius: 5px;
+  border: 1px solid rgba($color: #ffffff, $alpha: 0.1);
+  padding: 1.5rem;
+
+  @media only screen and (max-width: 650px) {
+    padding: 1rem;
+  }
+
+  .title {
+    font-weight: 600;
+  }
+
+  .table-container {
+    margin-top: 1.5rem;
+    overflow: hidden;
+    overflow-x: scroll;
+
+    .table {
+      width: 100%;
+      border: 1px solid rgba($color: #ffffff, $alpha: 0.1);
+
+      @media only screen and (max-width: 950px) {
+        width: 1150px;
+      }
+
+      .titles {
+        & > div {
+          padding: 1rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 16px;
+          font-weight: 500;
+          width: 100%;
+          border: 1px solid rgba($color: #ffffff, $alpha: 0.1);
+        }
+
+        .title-round {
+          width: 25%;
+        }
+
+        .title-opens {
+          width: 40%;
+        }
+
+        .title-closes {
+          width: 35%;
+        }
+      }
+
+      .rows {
+        & > div {
+          padding: 1rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 15px;
+          font-weight: 200;
+          border: 1px solid rgba($color: #ffffff, $alpha: 0.1);
+        }
+
+        .row-round {
+          width: 25%;
+        }
+
+        .row-opens {
+          width: 40%;
+        }
+
+        .row-closes {
+          width: 35%;
+        }
+      }
+    }
+  }
+}
+
+.table-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.table-container {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

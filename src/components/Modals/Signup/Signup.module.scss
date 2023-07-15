@@ -1,0 +1,149 @@
+@use '../../../styles/colors' as colors;
+
+.container {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: none;
+  transition: all 0.1s ease-out;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+
+  .background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: #000000, $alpha: 0.7);
+  }
+
+  .modal {
+    border: none;
+    outline: none;
+    width: 500px;
+    min-height: 250px;
+    padding: 2rem;
+    z-index: 100;
+    border-radius: 10px;
+    color: white;
+    background-color: colors.$main-component-bg;
+
+    @media only screen and (max-width: 650px) {
+      width: 100%;
+      height: 100%;
+      padding: 1.5rem;
+      border-radius: 0;
+      overflow: hidden;
+      overflow-y: scroll;
+    }
+
+    .title-area {
+      width: 100%;
+
+      svg {
+        font-size: 2rem;
+        cursor: pointer;
+      }
+
+      .title {
+        font-size: 22px;
+        font-weight: bold;
+      }
+    }
+
+    .subtitle {
+      margin-top: 0.5rem;
+      font-size: 15px;
+      color: rgba($color: #747474, $alpha: 1);
+
+      span {
+        color: colors.$main-blue;
+        cursor: pointer;
+      }
+    }
+
+    .input-area {
+      margin-top: 1.5rem;
+
+      @media only screen and (max-width: 650px) {
+        margin-top: 1rem;
+      }
+
+      .title {
+        font-size: 14px;
+        font-weight: 500;
+
+        @media only screen and (max-width: 650px) {
+          margin-top: 1rem;
+        }
+      }
+
+      .error-title {
+        color: colors.$red;
+        font-size: 12px;
+      }
+
+      .password-input {
+        position: relative;
+
+        svg {
+          position: absolute;
+          right: 30px;
+          font-size: 2rem;
+          cursor: pointer;
+        }
+      }
+
+      .error-border {
+        border: 1px solid rgba($color: colors.$red, $alpha: 0.6);
+      }
+
+      ::placeholder {
+        font-size: 14px;
+        font-weight: 300;
+      }
+    }
+
+    .button {
+      margin-top: 2rem;
+      width: 100%;
+
+      @media only screen and (max-width: 650px) {
+        margin-top: 1rem;
+      }
+    }
+
+    .captcha-area {
+      margin-top: 2rem;
+
+      @media only screen and (max-width: 650px) {
+        margin-top: 1rem;
+      }
+    }
+
+    .privacy-policy {
+      margin-top: 1.5rem;
+      text-align: center;
+      font-size: 14px;
+
+      @media only screen and (max-width: 650px) {
+        margin-top: 1rem;
+      }
+
+      a {
+        color: colors.$main-blue;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.container-active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

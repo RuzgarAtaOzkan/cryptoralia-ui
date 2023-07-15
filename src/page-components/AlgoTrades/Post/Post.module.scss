@@ -1,0 +1,420 @@
+@use '../../../styles/colors.scss' as colors;
+
+.container {
+  width: 1000px;
+  border-radius: 8px;
+  color: white;
+  border: 2px solid rgba($color: #ffffff, $alpha: 0.1);
+  background-color: colors.$main-component-bg;
+  position: relative;
+  overflow: hidden;
+
+  @media only screen and (max-width: 1050px) {
+    width: 100%;
+  }
+
+  .premium-layout {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    border-radius: 8px;
+    z-index: 2;
+
+    & > * {
+      z-index: 2;
+    }
+
+    & > img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      z-index: 1;
+      //filter: brightness(60%);
+    }
+
+    & > h3 {
+      font-size: 1.15rem;
+      text-align: center;
+
+      @media only screen and (max-width: 1250px) {
+        font-size: 1rem;
+      }
+    }
+
+    .buttons {
+      margin-top: 1rem;
+
+      & > * {
+        margin: 0 1rem;
+      }
+    }
+  }
+
+  .top {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+
+    @media only screen and (max-width: 950px) {
+      height: 250px;
+    }
+
+    @media only screen and (max-width: 650px) {
+      height: 180px;
+    }
+
+    .currency {
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      background-color: rgba($color: #ffffff, $alpha: 0.2);
+      border: 2px solid rgba(255, 255, 255, 0.5);
+      border-radius: 4px;
+      padding: 0.4rem 1.3rem;
+      font-size: 18px;
+      font-weight: bold;
+
+      @media only screen and (max-width: 950px) {
+        top: 18px;
+        left: 18px;
+        font-size: 12px;
+        padding: 0.3rem 1rem;
+      }
+
+      @media only screen and (max-width: 650px) {
+        top: 12px;
+        left: 12px;
+        padding: 0.2rem 0.8rem;
+      }
+    }
+
+    .position {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      padding: 0.4rem 1.3rem;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 4px;
+
+      @media only screen and (max-width: 950px) {
+        top: 18px;
+        right: 18px;
+        font-size: 12px;
+        padding: 0.3rem 1rem;
+      }
+
+      @media only screen and (max-width: 650px) {
+        top: 12px;
+        right: 12px;
+        padding: 0.2rem 0.8rem;
+      }
+    }
+
+    .long {
+      background-color: colors.$green;
+      border: 2px solid colors.$green;
+      color: colors.$main-component-bg;
+    }
+
+    .short {
+      background-color: colors.$red;
+      border: 2px solid colors.$red;
+    }
+
+    & > img {
+      border-radius: 10px 10px 0 0;
+      display: block;
+      width: 100%;
+      object-fit: cover;
+
+      @media only screen and (max-width: 950px) {
+        width: 100%;
+        height: 100%;
+      }
+
+      @media only screen and (max-width: 650px) {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .mid {
+    border-top: 2px solid rgba($color: #ffffff, $alpha: 0.1);
+    padding: 1.5rem;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.4px;
+    font-weight: 500;
+
+    @media only screen and (max-width: 650px) {
+      padding: 1rem;
+    }
+
+    @media only screen and (max-width: 650px) {
+      display: block;
+    }
+
+    .mid-left {
+      border-right: 1px solid rgba($color: #ffffff, $alpha: 0.2);
+      width: 40%;
+      padding-right: 2rem;
+      color: rgba($color: #ffffff, $alpha: 0.8);
+      letter-spacing: 0px;
+
+      @media only screen and (max-width: 650px) {
+        border: none;
+        border-bottom: 1px solid rgba($color: #ffffff, $alpha: 0.2);
+        padding-right: 0;
+        padding-bottom: 1rem;
+        width: 100%;
+        font-size: 12px;
+      }
+    }
+
+    .mid-right {
+      width: 60%;
+      margin-left: 2rem;
+
+      @media only screen and (max-width: 950px) {
+        display: block;
+      }
+
+      @media only screen and (max-width: 650px) {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 1rem;
+      }
+
+      .info-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @media only screen and (max-width: 950px) {
+          justify-content: space-around;
+        }
+
+        .info {
+          width: 100%;
+          text-align: center;
+          font-size: 15px;
+          margin-right: 2.5rem;
+          white-space: nowrap;
+
+          @media only screen and (max-width: 950px) {
+            margin-right: 0;
+          }
+
+          @media only screen and (max-width: 650px) {
+            font-size: 11px;
+          }
+
+          .title {
+            color: rgba($color: #ffffff, $alpha: 0.5);
+            font-weight: 300;
+          }
+
+          .value {
+            @media only screen and (max-width: 650px) {
+              font-size: 13px;
+            }
+          }
+
+          .profit {
+            color: colors.$green;
+          }
+
+          .loss {
+            color: colors.$red;
+          }
+        }
+      }
+
+      .first-info-row {
+        @media only screen and (max-width: 950px) {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+
+  .bottom {
+    border-top: 1px solid rgba($color: #ffffff, $alpha: 0.1);
+    padding: 0.8rem 1.5rem;
+
+    @media only screen and (max-width: 650px) {
+      padding: 1rem;
+    }
+
+    .date {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.7);
+
+      @media only screen and (max-width: 950px) {
+        top: 30px;
+        font-size: 12px;
+      }
+
+      @media only screen and (max-width: 650px) {
+        top: 18px;
+      }
+
+      & > span {
+        font-weight: bold;
+        margin-right: 0.5rem;
+      }
+    }
+
+    .premium {
+      background-color: colors.$body;
+      border: 2px solid colors.$premium;
+      color: white;
+      border-radius: 4px;
+      padding: 0.4rem 1.3rem;
+      font-size: 18px;
+      font-weight: bold;
+
+      @media only screen and (max-width: 950px) {
+        font-size: 12px;
+        padding: 0.3rem 1rem;
+      }
+    }
+  }
+}
+
+.placeholder {
+  width: 1000px;
+  border-radius: 10px;
+  overflow: hidden;
+  color: white;
+  border: 2px solid rgba($color: #ffffff, $alpha: 0.1);
+  background-color: colors.$main-component-bg;
+
+  @media only screen and (max-width: 1250px) {
+    width: 100%;
+  }
+
+  .placeholder-top {
+    position: relative;
+    height: 400px;
+    padding: 1.5rem;
+
+    @media only screen and (max-width: 950px) {
+      height: 300px;
+    }
+
+    @media only screen and (max-width: 950px) {
+      height: 200px;
+      padding: 1rem;
+    }
+  }
+
+  .placeholder-mid {
+    border-top: 2px solid rgba($color: #ffffff, $alpha: 0.1);
+    padding: 1.5rem;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.4px;
+    font-weight: 500;
+
+    @media only screen and (max-width: 650px) {
+      padding: 1rem;
+    }
+
+    @media only screen and (max-width: 650px) {
+      display: block;
+    }
+
+    .mid-left {
+      width: 40%;
+      height: 100%;
+      color: rgba($color: #ffffff, $alpha: 0.8);
+      letter-spacing: 0px;
+      height: 50px;
+
+      @media only screen and (max-width: 650px) {
+        border: none;
+        padding-right: 0;
+        padding-bottom: 1rem;
+        width: 100%;
+        font-size: 12px;
+      }
+    }
+
+    .mid-right {
+      width: 60%;
+      margin-left: 6rem;
+
+      @media only screen and (max-width: 650px) {
+        width: 100%;
+        margin-left: 0rem;
+        margin-top: 1rem;
+      }
+
+      .info {
+        text-align: center;
+        font-size: 15px;
+        width: 50px;
+        height: 50px;
+
+        @media only screen and (max-width: 650px) {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  .placeholder-bottom {
+    border-top: 1px solid rgba($color: #ffffff, $alpha: 0.1);
+    padding: 0.8rem 1.5rem;
+    height: 50px;
+
+    @media only screen and (max-width: 650px) {
+      padding: 1rem;
+    }
+
+    .frame {
+      width: 100px;
+      height: 100%;
+      border-radius: 3px;
+      background-color: rgba($color: #ffffff, $alpha: 0.04);
+    }
+  }
+}
+
+@keyframes reflection {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 150%;
+  }
+}
+
+.frame {
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+  background-color: rgba($color: #ffffff, $alpha: 0.04);
+  overflow: hidden;
+  position: relative;
+}
+
+.reflection {
+  position: absolute;
+  width: 40%;
+  height: 300%;
+  top: -80%;
+  background-color: rgba($color: #ffffff, $alpha: 0.07);
+  animation: reflection 2s infinite;
+  transform: rotateZ(30deg);
+}

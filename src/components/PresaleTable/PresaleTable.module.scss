@@ -1,0 +1,289 @@
+@use '../../styles/colors' as colors;
+
+.container {
+  overflow: hidden;
+  overflow-x: scroll;
+  box-shadow: rgba(149, 157, 165, 0.1) 0px 8px 24px;
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+  width: 1500px;
+  font-weight: 400;
+  font-size: 16px;
+  color: white;
+  background-color: colors.$component-bg;
+  border: 1px solid colors.$table-border;
+  border-bottom: none;
+  border-radius: 4px 4px 0 0;
+  overflow: hidden;
+
+  @media only screen and (max-width: 1550px) {
+    width: 100%;
+  }
+
+  @media only screen and (max-width: 950px) {
+    display: none;
+  }
+
+  .title-area {
+    padding: 1rem;
+    border-bottom: 1px solid colors.$table-border;
+
+    .title-area-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+
+      & > h1 {
+        font-size: 1.8rem;
+        font-weight: 700;
+      }
+    }
+  }
+
+  .titles {
+    border-bottom: 1px solid colors.$table-border;
+
+    & > div {
+      min-width: 50px;
+      padding: 0.4rem 0.8rem;
+      display: flex;
+      align-items: center;
+
+      span {
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: all 0.1s ease-in;
+      }
+
+      span:hover {
+        color: rgba($color: #7bb0ff, $alpha: 1);
+      }
+    }
+
+    .order {
+      @media only screen and (max-width: 650px) {
+        min-width: 35px;
+        width: 35px;
+      }
+    }
+
+    .logo {
+      width: 60px;
+    }
+
+    .name {
+      width: 300px;
+      outline: none;
+
+      @media only screen and (max-width: 1250px) {
+        width: 150px;
+      }
+    }
+
+    .network {
+      width: 150px;
+    }
+
+    .launch-date {
+      width: 150px;
+    }
+
+    .audit {
+      width: 150px;
+    }
+
+    .kyc {
+      width: 100px;
+    }
+
+    .presale {
+      width: 150px;
+    }
+
+    .votes {
+      width: 200px;
+    }
+  }
+
+  .rows {
+    .row {
+      color: white;
+      border-bottom: 1px solid colors.$table-border;
+      height: 80px;
+
+      & > * {
+        min-width: 50px;
+        padding: 0.6rem 0.8rem;
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+      }
+
+      .order {
+        font-size: 12px;
+        font-weight: 200;
+
+        @media only screen and (max-width: 650px) {
+          min-width: 35px;
+          width: 35px;
+        }
+      }
+
+      .logo {
+        width: 60px;
+        padding: 0;
+
+        & > a {
+          & > img {
+            display: block;
+            width: 45px;
+            height: 45px;
+            object-fit: cover;
+            border-radius: 50%;
+            overflow: hidden;
+          }
+        }
+      }
+
+      .symbol-name {
+        color: white;
+        width: 300px;
+        display: block;
+        justify-content: center;
+        align-items: flex-start;
+        position: relative;
+
+        @media only screen and (max-width: 1250px) {
+          width: 150px;
+        }
+
+        .symbol {
+          font-weight: 400;
+
+          & > img {
+            width: 15px;
+            margin-left: 0.3rem;
+            display: block;
+          }
+        }
+
+        .name {
+          font-size: 14px;
+          font-weight: 300;
+          color: rgba($color: #ffffff, $alpha: 0.6);
+        }
+      }
+
+      .network {
+        width: 150px;
+
+        img {
+          display: block;
+          width: 18px;
+          height: 18px;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+
+        div {
+          margin-left: 0.4rem;
+        }
+      }
+
+      .launch-date {
+        width: 150px;
+      }
+
+      .audit {
+        width: 150px;
+
+        a {
+          color: white;
+          display: block;
+          padding: 0.3rem 1rem;
+          border-radius: 3px;
+          background-color: rgba($color: #3c59ff, $alpha: 1);
+          font-size: 15px;
+        }
+      }
+
+      .kyc {
+        width: 100px;
+
+        a {
+          color: white;
+          display: block;
+          padding: 0.3rem 1rem;
+          border-radius: 3px;
+          background-color: #df5ff8;
+          font-size: 15px;
+        }
+      }
+
+      .presale {
+        width: 150px;
+        letter-spacing: 0.8px;
+
+        a {
+          color: white;
+          display: block;
+          padding: 0.3rem 1rem;
+          border-radius: 3px;
+          background-color: #3d9e17;
+          font-size: 15px;
+        }
+      }
+
+      .votes {
+        width: 200px;
+
+        .vote-btn {
+          width: 80%;
+          border-radius: 5px;
+          border: 1px solid colors.$main-blue;
+          cursor: pointer;
+          color: white;
+          padding: 0.4rem 0.4rem;
+          box-shadow: colors.$main-blue 0px 0px 2px 0px;
+        }
+
+        .vote-btn-voted {
+          background-color: colors.$main-blue;
+          color: colors.$primary-input-text;
+        }
+      }
+
+      .loss {
+        color: colors.$red;
+      }
+
+      .gain {
+        color: colors.$green;
+      }
+    }
+
+    .row:hover {
+      background-color: #242449;
+    }
+
+    .promoted-row {
+      background-color: #27274e;
+    }
+
+    .promoted-row:hover {
+      background-color: #2b2b55;
+    }
+  }
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.container {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

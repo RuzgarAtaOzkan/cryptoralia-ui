@@ -1,0 +1,9 @@
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>https://static.cryptoralia.com/sitemaps/tokens.xml</loc>
+  </sitemap>
+
+  <sitemap>
+    <loc>https://static.cryptoralia.com/sitemaps/pages.xml</loc>
+  </sitemap>
+</sitemapindex>

@@ -1,0 +1,121 @@
+.ads-header-section {
+  margin-top: 2rem;
+
+  @media only screen and (max-width: 950px) {
+    margin-top: 0;
+  }
+
+  .container {
+    width: 1500px;
+    overflow: hidden;
+    transition: all 0.2s ease-out;
+
+    @media only screen and (max-width: 1550px) {
+      width: 100%;
+    }
+
+    @media only screen and (max-width: 650px) {
+      overflow-x: scroll;
+      width: 300px;
+    }
+
+    .ads {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 90px;
+      width: 100%;
+
+      @media only screen and (max-width: 650px) {
+        height: 100px;
+      }
+
+      & > a {
+        display: block;
+
+        & > img {
+          display: block;
+          object-fit: cover;
+          width: 100%;
+
+          @media only screen and (max-width: 650px) {
+            width: auto;
+            max-width: 300px;
+          }
+        }
+
+        .ad-icon {
+          position: absolute;
+          top: -10px;
+          left: 20px;
+          font-size: 10px;
+          width: 20px;
+          height: 20px;
+          font-weight: bold;
+          background-color: rgba(255, 255, 255, 0.6);
+          border-radius: 3px;
+          color: rgb(0, 0, 0, 0.8);
+          z-index: 2;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          @media only screen and (max-width: 650px) {
+            font-size: 8px;
+            font-weight: bold;
+            width: 16px;
+            height: 16px;
+          }
+        }
+      }
+    }
+
+    .desktop {
+      & > a:nth-child(1) {
+        margin-right: 0.8rem;
+      }
+
+      & > a:nth-child(2) {
+        margin-left: 0.8rem;
+      }
+
+      & > iframe:nth-child(1) {
+        margin-right: 0.8rem;
+      }
+
+      & > iframe:nth-child(2) {
+        margin-left: 0.8rem;
+      }
+
+      @media only screen and (max-width: 650px) {
+        display: none;
+      }
+    }
+
+    .mobile {
+      display: none;
+      position: relative;
+
+      @media only screen and (max-width: 650px) {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+      }
+    }
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .container::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .container {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+.display-none {
+  display: none;
+}

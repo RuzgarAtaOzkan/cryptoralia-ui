@@ -1,0 +1,310 @@
+@use '../../styles/colors' as colors;
+
+.guide-section {
+  margin-top: 2rem;
+  color: white;
+
+  .container {
+    width: 1500px;
+
+    @media only screen and (max-width: 1550px) {
+      width: 100%;
+    }
+
+    @media only screen and (max-width: 950px) {
+      flex-direction: column;
+    }
+
+    .search-area {
+      width: 320px;
+      border-radius: 5px;
+      border: 1px solid rgba($color: #ffffff, $alpha: 0.1);
+      box-shadow: rgba(109, 121, 133, 0.1) 0px 0px 24px;
+      background-color: colors.$main-component-bg;
+
+      @media only screen and (max-width: 950px) {
+        width: 100%;
+        border: none;
+      }
+
+      .search-area-top {
+        padding: 1rem;
+        border-bottom: 1px solid rgba($color: #ffffff, $alpha: 0.1);
+
+        @media only screen and (max-width: 950px) {
+          padding: 0;
+          border: none;
+        }
+
+        .search-input-area {
+          border-radius: 4px;
+          border: 1px solid rgba($color: #ffffff, $alpha: 0.1);
+
+          & > input {
+            font-size: 14px;
+            width: 100%;
+            outline: none;
+            border: none;
+            background-color: transparent;
+            color: white;
+            padding: 0.6rem;
+
+            @media only screen and (max-width: 950px) {
+              padding: 0.6rem 1rem;
+              font-size: 16px;
+            }
+          }
+
+          .loading-circle-icon {
+            animation: spin 1s infinite;
+
+            & > svg {
+              width: 40px;
+              font-size: 1.3rem;
+              cursor: pointer;
+
+              @media only screen and (max-width: 950px) {
+                font-size: 1.4rem;
+                margin: 0.6rem;
+              }
+            }
+          }
+
+          & > svg {
+            width: 40px;
+            font-size: 1.3rem;
+            cursor: pointer;
+
+            @media only screen and (max-width: 950px) {
+              font-size: 1.4rem;
+              margin: 0.6rem;
+            }
+          }
+        }
+      }
+
+      .search-area-bottom {
+        overflow: hidden;
+        overflow-y: scroll;
+        height: 650px;
+
+        @media only screen and (max-width: 950px) {
+          display: none;
+        }
+
+        .search-item {
+          border-top: 1px solid rgba($color: #ffffff, $alpha: 0.1);
+          height: 70px;
+          padding: 0.8rem;
+          cursor: pointer;
+          color: white;
+          transition: all 0.1s ease-out;
+
+          .search-item-title {
+            font-size: 13px;
+            width: 70%;
+          }
+
+          .search-item-category {
+            margin-left: 1rem;
+            width: 30%;
+            font-size: 11px;
+            color: rgba($color: #ffffff, $alpha: 0.5);
+          }
+        }
+
+        .search-item:hover {
+          background-color: colors.$body;
+        }
+
+        .search-item:first-child {
+          border-top: none;
+        }
+      }
+
+      .search-area-bottom::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      /* Track */
+      .search-area-bottom::-webkit-scrollbar-track {
+        background-color: colors.$main-component-bg;
+      }
+
+      /* Handle */
+      .search-area-bottom::-webkit-scrollbar-thumb {
+        background: colors.$body;
+      }
+
+      /* Handle on hover */
+      .search-area-bottom::-webkit-scrollbar-thumb:hover {
+        background: colors.$nav;
+      }
+    }
+
+    .guides-dropdown {
+      width: 100%;
+      margin-top: 1rem;
+      position: relative;
+      display: none;
+
+      @media only screen and (max-width: 950px) {
+        display: block;
+      }
+
+      .dropdown-bar {
+        cursor: pointer;
+        padding: 0.6rem;
+        font-size: 14px;
+        border: 1px solid rgba($color: #ffffff, $alpha: 0.1);
+        border-radius: 5px;
+        background-color: colors.$header;
+
+        @media only screen and (max-width: 950px) {
+          padding: 0.6rem 1rem;
+        }
+      }
+
+      .dropdown-menu {
+        transition: all 0.2s ease-out;
+        height: 300px;
+        overflow: hidden;
+        overflow-y: scroll;
+        border: 1px solid rgba($color: #ffffff, $alpha: 0.1);
+        border-top: none;
+        border-radius: 5px;
+        background-color: colors.$nav;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        position: absolute;
+        width: 100%;
+        height: 0;
+        opacity: 0;
+        top: 100%;
+        left: 0;
+
+        & > a {
+          transition: all 0.2s ease-out;
+          display: block;
+          padding: 0.8rem;
+          font-size: 14px;
+          color: white;
+          border-top: 1px solid rgba($color: #ffffff, $alpha: 0.1);
+        }
+
+        & > a:hover {
+          background-color: colors.$main-component-bg;
+        }
+      }
+
+      .dropdown-menu-active {
+        opacity: 1;
+        height: 250px;
+      }
+    }
+
+    .guide-area {
+      margin-left: 1rem;
+      border: 1px solid rgba($color: #ffffff, $alpha: 0.1);
+      border-radius: 5px;
+      width: 100%;
+      background-color: colors.$main-component-bg;
+
+      @media only screen and (max-width: 1550px) {
+        width: 100%;
+      }
+
+      @media only screen and (max-width: 950px) {
+        margin-left: 0;
+        margin-top: 1rem;
+      }
+
+      .guide-title {
+        padding: 1.5rem;
+        border-bottom: 1px solid rgba($color: #ffffff, $alpha: 0.1);
+
+        @media only screen and (max-width: 650px) {
+          padding: 1rem;
+        }
+
+        h1 {
+          font-size: 22px;
+        }
+      }
+
+      .guide-content {
+        padding: 1.5rem;
+        @media only screen and (max-width: 650px) {
+          padding: 1rem;
+        }
+
+        & > img {
+          margin: 2rem 0;
+          width: 100%;
+
+          @media only screen and (max-width: 950px) {
+            width: 100%;
+          }
+        }
+
+        & > h2 {
+          margin-top: 2rem;
+          margin-bottom: 1rem;
+          font-size: 20px;
+          font-weight: 600;
+        }
+
+        & > h3 {
+          margin-top: 2rem;
+          margin-bottom: 1rem;
+          font-size: 16px;
+          font-weight: 600;
+        }
+
+        & > h4 {
+          margin-top: 2rem;
+          margin-bottom: 1rem;
+          font-size: 20px;
+          font-weight: 600;
+        }
+
+        & > p {
+          font-size: 14px;
+          font-weight: 300;
+          margin-top: 1rem;
+          line-height: 24px;
+          letter-spacing: 0.8px;
+
+          strong {
+            font-weight: 600;
+          }
+
+          & > img {
+            width: 100%;
+
+            @media only screen and (max-width: 950px) {
+              //width: 100%;
+            }
+          }
+        }
+
+        & > p:first-child {
+          margin-top: 0;
+        }
+
+        a {
+          color: colors.$main-blue;
+        }
+      }
+    }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateZ(360deg);
+  }
+}

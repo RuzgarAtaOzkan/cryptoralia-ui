@@ -1,0 +1,22 @@
+@use '../../styles/colors' as colors;
+
+.container {
+  border: 3px solid white;
+  border-radius: 3px;
+  width: 28px;
+  height: 28px;
+  padding: 0.2rem;
+  cursor: pointer;
+  color: colors.$main-blue;
+
+  svg {
+    transition: all 0.2s ease-out;
+    opacity: 0;
+  }
+}
+
+.checked {
+  svg {
+    opacity: 1;
+  }
+}

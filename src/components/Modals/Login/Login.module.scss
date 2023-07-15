@@ -1,0 +1,111 @@
+@use '../../../styles/colors' as colors;
+
+.container {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  opacity: 1;
+  transition: all 0.1s ease-out;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: #000000, $alpha: 0.7);
+  }
+
+  .modal {
+    width: 500px;
+    min-height: 250px;
+    padding: 2rem;
+    border-radius: 10px;
+    z-index: 100;
+    color: white;
+    background-color: colors.$main-component-bg;
+
+    @media only screen and (max-width: 650px) {
+      width: 100%;
+      height: 100%;
+      padding: 1.5rem;
+      border-radius: 0;
+    }
+
+    .title-area {
+      width: 100%;
+
+      svg {
+        font-size: 2rem;
+        cursor: pointer;
+      }
+
+      .title {
+        font-size: 22px;
+        font-weight: bold;
+      }
+    }
+
+    .subtitle {
+      margin-top: 0.5rem;
+      font-size: 15px;
+      color: rgba($color: #747474, $alpha: 1);
+
+      span {
+        color: colors.$main-blue;
+        cursor: pointer;
+      }
+    }
+
+    .input-area {
+      margin-top: 1.5rem;
+
+      .title {
+        font-size: 14px;
+        font-weight: 500;
+
+        @media only screen and (max-width: 650px) {
+          margin-top: 1rem;
+        }
+      }
+
+      .input {
+        position: relative;
+
+        svg {
+          position: absolute;
+          right: 30px;
+          font-size: 2rem;
+          cursor: pointer;
+        }
+      }
+
+      ::placeholder {
+        font-size: 14px;
+        font-weight: 300;
+      }
+    }
+
+    .forgot-password {
+      text-align: right;
+      font-size: 12px;
+      margin-top: 0.2rem;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .forgot-password:hover {
+      color: colors.$main-blue;
+    }
+
+    .button {
+      margin-top: 2rem;
+      width: 100%;
+    }
+  }
+}

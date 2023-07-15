@@ -1,0 +1,41 @@
+@use '../../styles/colors' as colors;
+
+.table-section {
+  margin-top: 2rem;
+
+  .table-area {
+    @media only screen and (max-width: 1550px) {
+      width: 100%;
+    }
+
+    .titles {
+      font-size: 2rem;
+      color: white;
+      border-radius: 5px 5px 0 0;
+      width: 1500px;
+      background-color: colors.$main-component-bg;
+      box-shadow: rgba(149, 157, 165, 0.1) 0px 8px 24px;
+      padding: 1rem 1.5rem;
+
+      @media only screen and (max-width: 1550px) {
+        width: 100%;
+      }
+
+      @media only screen and (max-width: 950px) {
+        width: 100%;
+      }
+
+      & > h1 {
+        color: white;
+        font-size: 1.8rem;
+      }
+
+      .description {
+        margin-top: 1rem;
+
+        font-size: 1rem;
+        color: rgba($color: #ffffff, $alpha: 0.9);
+      }
+    }
+  }
+}
